@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>My Music Box</title>
+  <audio id="cAudio">
+    <source src="media/notes_mp3/c_note.mp3" type="audio/mp3">
+    <!-- <source src="media/notes_ogg/c_note.ogg" type="audio/ogg"> -->
+    <!-- <source src="media/notes_wav/c_note.wav" type="audio/wav"> -->
+  </audio>
+  <audio id="dAudio">
+    <source src="media/notes_mp3/d_note.mp3" type="audio/mp3">
+    <!-- <source src="media/notes_ogg/d_note.ogg" type="audio/ogg"> -->
+    <!-- <source src="media/notes_wav/d_note.wav" type="audio/wav"> -->
+  </audio>
+  <audio id="eAudio">
+    <source src="media/notes_mp3/e_note.mp3" type="audio/mp3">
+    <!-- <source src="media/notes_ogg/e_note.ogg" type="audio/ogg"> -->
+    <!-- <source src="media/notes_wav/e_note.wav" type="audio/wav"> -->
+  </audio>
+  <audio id="fAudio">
+    <source src="media/notes_mp3/f_note.mp3" type="audio/mp3">
+    <!-- <source src="media/notes_ogg/f_note.ogg" type="audio/ogg"> -->
+    <!-- <source src="media/notes_wav/f_note.wav" type="audio/wav"> -->
+  </audio>
+  <audio id="gAudio">
+    <source src="media/notes_mp3/g_note.mp3" type="audio/mp3">
+    <!-- <source src="media/notes_ogg/g_note.ogg" type="audio/ogg"> -->
+    <!-- <source src="media/notes_wav/g_note.wav" type="audio/wav"> -->
+  </audio>
+  <audio id="aAudio">
+    <source src="media/notes_mp3/a_note.mp3" type="audio/mp3">
+    <!-- <source src="media/notes_ogg/a_note.ogg" type="audio/ogg"> -->
+    <!-- <source src="media/notes_wav/a_note.wav" type="audio/wav"> -->
+  </audio>
+  <audio id="bAudio">
+    <source src="media/notes_mp3/b_note.mp3" type="audio/mp3">
+    <!-- <source src="media/notes_ogg/b_note.ogg" type="audio/ogg"> -->
+    <!-- <source src="media/notes_wav/b_note.wav" type="audio/wav"> -->
+  </audio>
+  <link href="css/main.css"  rel="stylesheet" type="text/css"/>
+  
+</head>
+<body>
+  <div id="reset" class="box">Reset</div>
+  <div id="instrument">
+    <a id="c" class="box music-note" data-note="cAudio"></a>
+    <a id="d" class="box music-note" data-note="dAudio"></a>
+    <a id="e" class="box music-note" data-note="eAudio"></a>
+    <a id="f" class="box music-note" data-note="fAudio"></a>
+    <a id="g" class="box music-note" data-note="gAudio"></a>
+    <a id="a" class="box music-note" data-note="aAudio"></a>
+    <a id="b" class="box music-note" data-note="bAudio"></a>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

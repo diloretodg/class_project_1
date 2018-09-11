@@ -1,0 +1,145 @@
+body {
+    background-color: black;
+}
+
+/*This is the style for our boxs' container. With it we can position and center the boxes in the browser.*/
+
+#instrument {
+    height: 116px;
+    width: 812px;
+    padding-right: 10px;
+    padding-top: 50px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/*This is the style that give our music boxes shape*/
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+    float:left;
+    transform:rotate(45deg)
+}
+
+/*These are the styles that individually color our boxes and also determine the hover and active states*/
+
+#c:hover {
+    background-color:#661920;
+    cursor: pointer;
+}
+
+#c:active {
+    background-color:#db1d2d;
+}
+
+#c {
+    background-color: #3e181b;
+    border: 3px solid #db1d2d;
+}
+
+
+#d:hover {
+    background-color:#6e2819;
+    cursor: pointer;
+}
+
+#d:active {
+    background-color:#f0421c;
+}
+
+#d {
+    background-color: #422018;
+    border: 3px solid #f0421c;
+}
+
+
+#e:hover {
+    background-color:#735b20;
+    cursor: pointer;
+}
+
+#e:active {
+    background-color:#fec02d;
+}
+
+#e {
+    background-color: #45391b;
+    border: 3px solid #fec02d;
+}
+
+
+#f:hover {
+    background-color:#1b613b;
+    cursor: pointer;
+}
+
+#f:active {
+    background-color:#20d071;
+}
+
+#f {
+    background-color: #193c29;
+    border: 3px solid #20d071;
+}
+
+
+#g:hover {
+    background-color:#184d65;
+    cursor: pointer;
+}
+
+#g:active {
+    background-color:#1a9ddb;
+}
+
+#g {
+    background-color: #18323e;
+    border: 3px solid #1a9ddb;
+}
+
+
+#a:hover {
+    background-color:#4e2753;
+    cursor: pointer;
+}
+
+#a:active {
+    background-color:#a13fad;
+}
+
+#a {
+    background-color: #331f35;
+    border: 3px solid #a13fad;
+}
+
+
+#b:hover {
+    background-color:#6f3a62;
+    cursor: pointer;
+}
+
+#b:active {
+    background-color:#f26fd4;
+}
+
+#b {
+    background-color: #43293d;
+    border: 3px solid #f26fd4;
+}
+
+#reset {
+    background-color: #1a9ddb;
+    left: 45%;
+    top: 10%;
+    text-align: center;
+    position: absolute;
+}
+
+#reset:active {
+    border: 3px solid #1a9ddb;
+    background-color: darkblue;
+}
