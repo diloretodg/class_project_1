@@ -28,7 +28,24 @@ $("#song-1").on("click", function() {
     playSong(songArr)
 })
 
-
+function musicSearch() {
+    var queryURL = "http://api.musixmatch.com/ws/1.1/album.get?album_id=14250417&apikey=2b2479798b5987478a81a1e7f9eb0216";
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        data: {
+            format: "jsonp",
+            callback: "jsonp_callback"
+        },
+        dataType: "jsonp",
+        jsonpCallback: 'jsonp_callback',
+    }).then(function(response) {
+        console.log(response);
+    //     $("body").append($("<img>")
+    //     .attr("src", response.message.body.track_list[0].track.album_coverart_100x100))
+    // })
+})}
+musicSearch();
 
 
 
