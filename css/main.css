@@ -143,3 +143,10 @@ body {
     border: 3px solid #1a9ddb;
     background-color: darkblue;
 }
+
+#song-1 {
+    background-color: orangered;
+    position: absolute;
+    left: 45%;
+    top: 25%;
+}
