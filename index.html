@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Link to Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Link to JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Link to Firebase Database -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
   <title>My Music Box</title>
   <audio id="cAudio">
     <source src="media/notes_mp3/c_note.mp3" type="audio/mp3">
@@ -44,7 +49,8 @@
 </head>
 <body>
     <iframe width="560" height="315" class="musicVideo" src="https://www.youtube.com/embed/dASqLXiuomY?start=20" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  <div id="instrument">
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Qx2gvHjNhQ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+    <div id="instrument">
     <a id="c" class="box music-note" data-note="cAudio"></a>
     <a id="d" class="box music-note" data-note="dAudio"></a>
     <a id="e" class="box music-note" data-note="eAudio"></a>
