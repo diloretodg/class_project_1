@@ -1,3 +1,5 @@
+@media(min-width: 500px){
+
 body {
     background-color: black;
     margin: 0;
@@ -166,3 +168,7 @@ nav{
     border: 3px solid #1a9ddb;
     background-color: darkblue;
 }
+
+}
+
+@media(max-width: 768px){
