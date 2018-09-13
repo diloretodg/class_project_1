@@ -88,7 +88,9 @@ $(".music-note").on("click", function(event) {
 $(document).on("click", ".music-note", function(){
     var note = $(this).attr("data-note");
     play(note);
-    console.log("playing "+ note);   
+
+    console.log("playing "+ note);
+
     noteIntervals.push(note);
     });
 
