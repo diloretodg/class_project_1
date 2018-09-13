@@ -13,64 +13,84 @@
 var noteIntervals = [];
 // test song function
 var songArr = [
-    {note: "fAudio", sequence: 1},
-    {note: "fAudio", sequence: 2},
-    {note: "gAudio", sequence: 3},
-    {note: "aAudio", sequence: 4},
-    {note: "fAudio", sequence: 5},
-    {note: "aAudio", sequence: 6},
-    {note: "gAudio", sequence: 7},
-    {note: "cAudio", sequence: 8},
-    {note: "fAudio", sequence: 9},
-    {note: "fAudio", sequence: 10},
-    {note: "gAudio", sequence: 11},
-    {note: "aAudio", sequence: 12},
-    {note: "fAudio", sequence: 13},
-    {note: "eAudio", sequence: 14},
+    {note: "f3Audio", sequence: 1},
+    {note: "f3Audio", sequence: 2},
+    {note: "g3Audio", sequence: 3},
+    {note: "a3Audio", sequence: 4},
+    {note: "f3Audio", sequence: 5},
+    {note: "a3Audio", sequence: 6},
+    {note: "g3Audio", sequence: 7},
+    {note: "c3Audio", sequence: 8},
+    {note: "f3Audio", sequence: 9},
+    {note: "f3Audio", sequence: 10},
+    {note: "g3Audio", sequence: 11},
+    {note: "a3Audio", sequence: 12},
+    {note: "f3Audio", sequence: 13},
+    {note: "e3Audio", sequence: 14},
 ]
-function playSong(s){
-    for (var i = 0; i < s.length; i ++) {
-        setTimeout(function(index) {
-            play(s[index].note)
-        }.bind(null, i), (i+1) * 1000)
+
+
+var game = {
+    turn: 0,
+    currentSong: songArr,
+    correctNote: "",
+    playerChoice: "",
+  };
+
+
+
+$("#reset").on("click", function(){
+    newGame();
+    console.log("game start");
+});
+
+$(".music-note").on("click", function(){
+    var note = $(this).attr("data-note");
+    play(note);
+    playerTurn(note)
+  });
+
+function newGame() {
+    game.turn = 0;
+    game.currentSong = songArr
+    simonSays(game.currentSong);
+}
+
+function playerTurn(n) {
+    game.playerChoice = n;
+    game.correctNote = game.currentSong[game.turn];
+    if (game.playerChoice == game.currentSong){
+        console.log("correct");
+        game.turn++;
+        simonSays(game.currentSong);
+    } else {
+        console.log("wrong");
+        simonSays(game.currentSong);
     }
 }
 
-$("#song-1").on("click", function() {
-    playSong(songArr)
-})
-//  uses musixmatch api but cover art is hidden behind pay wall
-function musicSearch() {
-    var queryURL = "http://api.musixmatch.com/ws/1.1/album.get?album_id=14250417&apikey=2b2479798b5987478a81a1e7f9eb0216";
-    $.ajax({
-        url: queryURL,
-        method: "GET",
-        data: {
-            format: "jsonp",
-            callback: "jsonp_callback"
-        },
-        dataType: "jsonp",
-        jsonpCallback: 'jsonp_callback',
-    }).then(function(response) {
-        console.log(response);
-    //     $("body").append($("<img>")
-    //     .attr("src", response.message.body.track_list[0].track.album_coverart_100x100))
-    // })
-})}
-musicSearch();
+function simonSays(s) {
+    for (var i = 0; i <= game.turn; i ++) {
+        setTimeout(function(index) {
+        play(s[index].note)
+        }.bind(null, i), (i) * 1000)
+    }
+}
+
+
 
 // Played Notes Array
-var noteIntervals = [];
+// var noteIntervals = [];
 
-// Song Notes Array
-var musicNotes = [];
+// // Song Notes Array
+// var musicNotes = [];
 
-// on Click button for adding notes to noteIntervals Array
-$(".music-note").on("click", function(event) {
-    event.preventDefault();
-    var grabId = this.id;
-    noteIntervals.push(grabId);
-    console.log(noteIntervals);
+// // on Click button for adding notes to noteIntervals Array
+// $(".music-note").on("click", function(event) {
+//     event.preventDefault();
+//     var grabId = this.id;
+//     noteIntervals.push(grabId);
+//     console.log(noteIntervals);
 
 // Creates temp local object for holding note info
 // Depends on what we're going to save to Firebase
@@ -85,23 +105,11 @@ $(".music-note").on("click", function(event) {
     // console.log(noteIntervals);
 
 // handles on click note plays acts like a loop should be in other file to turn on off.
-$(document).on("click", ".music-note", function(){
-    var note = $(this).attr("data-note");
-    play(note);
 
-    console.log("playing "+ note);
-
-    noteIntervals.push(note);
-    });
 
 
 // clear all playing notes
-$("#reset").on("click", function() {
-    for (var i = 0; i < noteIntervals.length; i++) {
-        clearInterval(noteIntervals[i]);
-    }
-    console.log("timer reset");
-})
+
 
 // plays our notes
 function play(n) {
@@ -115,6 +123,6 @@ function play(n) {
     console.log("playing "+ n + " audio file")
     console.log(audio)
 };
-})     
+    
 
  
