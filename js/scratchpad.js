@@ -174,10 +174,17 @@ simonGame.on("click", function() {
   };
   function playerTurn(x) {
     game.playerChoice = x;
-    if(playerChoice == correctNote) {
+    gamecorrectNote = currentSong[turn];
+    if(game.playerChoice == game.correctNote) {
       game.turn ++;
+      console.log("correct!");
     }
   };
+  $(".music-note").on("click", function(){
+    var note = $(this).attr("data-note");
+    play(note);
+    playerTurn(note)
+  });
     
 
 

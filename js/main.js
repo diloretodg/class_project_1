@@ -1,15 +1,3 @@
-
-// Initialize Firebase
-// var config = {
-// apiKey: "AIzaSyChswfB5HAG1cQcjkai_26cvtFHtYqpNYU",
-// authDomain: "project1-a46e9.firebaseapp.com",
-// databaseURL: "https://project1-a46e9.firebaseio.com",
-// projectId: "project1-a46e9",
-// storageBucket: "project1-a46e9.appspot.com",
-// messagingSenderId: "1004479758001"
-// };
-// firebase.initializeApp(config);
-
 var noteIntervals = [];
 // test song function
 var songArr = [
@@ -29,7 +17,7 @@ var songArr = [
     {note: "e3Audio", sequence: 14},
 ]
 
-
+// relevant game val
 var game = {
     turn: 0,
     sequence: 0,
@@ -38,31 +26,29 @@ var game = {
     correctNote: "",
     playerChoice: "",
     yourTurn: false,
+    gameStart: false,
 
   };
-
-
-
+// event listener for game start
 $("#reset").on("click", function(){
     newGame();
     console.log("game start");
 });
-
+// event listener for simon selection
 $(".music-note").on("click", function(){
     if (game.yourTurn == true){
         var note = $(this).attr("data-note");
         play(note);
         playerTurn(note);
     }
-});
-    
-
+});  
+// starts fresh simon game
 function newGame() {
-    game.turn = 0;
+   if(gameStart==false){ game.turn = 0;
     game.currentSong = songArr
-    simonSays(game.currentSong);
+    simonSays(game.currentSong);}
 }
-
+// allows player turn up to max length
 function playerTurn(n) {
     game.yourTurn = false;
     game.playerChoice = n;
@@ -81,7 +67,7 @@ function playerTurn(n) {
         }
     }
 }
-
+// plays simon sequence
 function simonSays(s) {
     game.yourTurn = false;
     game.sequence = 0;
@@ -96,41 +82,6 @@ function simonSays(s) {
     }, 2000);
     
 }
-
-
-
-// Played Notes Array
-// var noteIntervals = [];
-
-// // Song Notes Array
-// var musicNotes = [];
-
-// // on Click button for adding notes to noteIntervals Array
-// $(".music-note").on("click", function(event) {
-//     event.preventDefault();
-//     var grabId = this.id;
-//     noteIntervals.push(grabId);
-//     console.log(noteIntervals);
-
-// Creates temp local object for holding note info
-// Depends on what we're going to save to Firebase
-    // var savedNotes = {
-      
-    // };
-  
-    // // Uploads user's played notes to the database
-    // // IF we got with the local object, that would go in noteIntervals place
-    // database.ref().push(noteIntervals);
-    //   // Logs everything to console
-    // console.log(noteIntervals);
-
-// handles on click note plays acts like a loop should be in other file to turn on off.
-
-
-
-// clear all playing notes
-
-
 // plays our notes
 function play(n) {
     var audio = document.getElementById(n);
@@ -142,7 +93,4 @@ function play(n) {
 
     console.log("playing "+ n + " audio file")
     console.log(audio)
-};
-    
-
- 
+}; 
