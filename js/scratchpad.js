@@ -1,153 +1,126 @@
-
-// // pulls key id
-// function reply_click(clicked_id){
-//     console.log(clicked_id);
-//   };
-  
-  
-//   $('#c').mouseover(function(){
-//       cNote.currentTime = 0;
-//       cNote.play();
-//   });
-//   //allows for quick clicks to trigger each time
-//   function play() {
-//     var audio = document.getElementById('');
-//     if (audio.paused) {
-//         audio.play();
-//     }else{
-//         audio.currentTime = 0
-//     }
-//   };
-  
-//   function cPlay(){
-//     var audio = document.getElementById('cAudio');
-//     if (audio.paused) {
-//         audio.play();
-//     }else{
-//         audio.currentTime = 0
-//     }
-//   };
-//   function dPlay(){
-//     var audio = document.getElementById('dAudio');
-//     if (audio.paused) {
-//         audio.play();
-//     }else{
-//         audio.currentTime = 0
-//     }
-//   };
-//   function ePlay(){
-//     var audio = document.getElementById('eAudio');
-//     if (audio.paused) {
-//         audio.play();
-//     }else{
-//         audio.currentTime = 0
-//     }
-//   };
-//   function fPlay(){
-//     var audio = document.getElementById('fAudio');
-//     if (audio.paused) {
-//         audio.play();
-//     }else{
-//         audio.currentTime = 0
-//     }
-//   };
-//   function gPlay(){
-//     var audio = document.getElementById('gAudio');
-//     if (audio.paused) {
-//         audio.play();
-//     }else{
-//         audio.currentTime = 0
-//     }
-//   };
-//   function aPlay(){
-//     var audio = document.getElementById('aAudio');
-//     if (audio.paused) {
-//         audio.play();
-//     }else{
-//         audio.currentTime = 0
-//     }
-//   };
-//   function bPlay(){  var audio = document.getElementById('bAudio');
-//     if (audio.paused) {
-//         audio.play();
-//     }else{
-//         audio.currentTime = 0
-//     }
-//   };
+// musicxmatch:http://api.musixmatch.com/ws/1.1/ API key: 2b2479798b5987478a81a1e7f9eb0216
 
 
-//    ///////////////////////////////////////////////////////////////////////////// ////////////////////////////////////
+// lastFM API Key: bd35a525035b7b7a5873526c9bfd2a79
+// http://www.last.fm/api/auth/?api_key=xxx
 
-   
-// var notesArr = [
-//     {name:"c", el:function() },
-//     {name:"d", el:function },
-//     {name:"e", el:function },
-//     {name:"f", el:function },
-//     {name:"g", el:function },
-//     {name:"a", el:function },
-//     {name:"b", el:function }
-// ]
-
-// var file = ["mp3","wav", "ogg"]
+// example query url http://api.musixmatch.com/ws/1.1/track.search?q_artist=brad mehldau&q_track=bard&apikey=2b2479798b5987478a81a1e7f9eb0216
 
 
-// function loadAudio(x){
-//     file.indexOf(x)
-//     var audio = $("<audio>");
-//     var audioSrc = $("<source>")
-//     .attr("type","audio/" + file[file.indexOf(x)]);
-//     for (var i = 0; i < notesArr.length; i ++) {
-//         var mediasrc = "media/notes_" + x + "/" + notesArr[i].name + "_note."+file[file.indexOf(x)];
-//         audio.attr("id", "note-" + notesArr[i].name);
-//         audioSrc.attr("src", mediasrc);
-//         audio.append(audioSrc);
-//         $("head").append(audio);
-//     }
-// }
+var songArr = [
+    {note: "cAudio", sequence: 1},
+    {note: "aAudio", sequence: 2},
+    {note: "cAudio", sequence: 3},
+    {note: "bAudio", sequence: 4},
+    {note: "gAudio", sequence: 5},
+    {note: "dAudio", sequence: 6},
+    {note: "eAudio", sequence: 7},
+    {note: "cAudio", sequence: 8},
+]
 
-// function renderbuttons(){
-//     $("#instrument").empty();
-//     for(var i=0; i < notesArr.length; i++) {
-//         notesArr[i].el = $("<a>")
-//         .attr("data-file-type", file[file.indexOf(x)])
-//         .attr("data-note", notesArr[i].name)
-//         .attr("class","box")
-//         .attr("id", notesArr[i].name);
-//         $("#instruments").append(notesArr[i].el)
-//     }
-// }
+$(document).on("click", ".music-note", function(){
+    var note = $(this).attr("data-note");
+    play(note);
+    console.log("playing "+ note);   
+    noteIntervals.push(setInterval(function() {play(note) }, 2000))});
 
-// function playNote(){
-//     var audio = $(this) ;
-//     if (audio.paused) {
-//         audio.play();
-//     }else{
-//         audio.currentTime = 0
-//     }
-// }
-// loadAudio(mp3);
-// renderbuttons();
 
-function gameClock(c, fn) {
-    var gameTimer = $("<div>").attr("class", "game-timer");
-    triviaAnswers.append(gameTimer);
-    var counter = c;
-    gameTimerCountdown = setInterval(function(){
-        gameTimer.text(counter);
-        counter--;
-    if (counter < 3) {
-        gameTimer.attr("class", "game-timer text-danger");
-    };
-    if (counter == -1) {
-        gameTimer.empty();
-        clearInterval(gameTimerCountdown);
-        fn();
-      };
-    }, 1000);
+function playSong(s){
+    for (var i = o; i < s.length; i ++) {
+        setTimeout(function() {play(s.note)}, (i+1) * 1000)
+    }
 }
 
-timedNote = setinterval(function() {
-    play(c); 
-}, 5000);
+
+// ////////////////////////////////// testing musicxmatch API
+  // MusixMatch Lyrics Loader
+  var MMLyricsLoader = (function() {
+    var _apiKey = "2b2479798b5987478a81a1e7f9eb0216",
+        _apiRoot = "http://api.musixmatch.com/ws/1.1/",
+        _drakeId = "440804",
+        _viewsAlbumId = "23361516",
+        _tracks = [];
+    _lyrics = [];
   
+    function hasTracks() {
+      return _tracks.length > 0;
+    }
+  
+    function fetchTracks() {
+      $.ajax({
+        type: 'GET',
+        data: {
+          apikey: _apiKey,
+          album_id: _viewsAlbumId,
+          format: "jsonp",
+          callback: "jsonp_callback"
+        },
+        url: _apiRoot + "album.tracks.get",
+        dataType: "jsonp",
+        jsonpCallback: 'jsonp_callback',
+        contentType: 'application/json',
+        success: function(data) {
+          _tracks = data.message.body.track_list;
+          fetchNewLyric();
+        }
+      });
+    }
+  
+    function fetchNewLyric() {
+      var i = Math.floor(Math.random() * (_tracks.length - 0 + 1));
+      fetchLyrics(_tracks[i].track);
+    }
+  
+    function fetchLyrics(track) {
+      $.ajax({
+        type: 'GET',
+        data: {
+          apikey: _apiKey,
+          track_id: track.track_id,
+          format: "jsonp",
+          callback: "jsonp_callback"
+        },
+        url: _apiRoot + "track.snippet.get",
+        dataType: "jsonp",
+        jsonpCallback: 'jsonp_callback',
+        contentType: 'application/json',
+        success: function(data) {
+          var newLyric = data.message.body.snippet.snippet_body;
+          _lyrics.push(newLyric);
+          vm.track = track.track_name;
+          vm.lyrics = newLyric;
+        }
+      });
+    }
+  
+    function placeLyrics() {
+      if ( !hasTracks() ) {
+        fetchTracks();
+      } else {
+        fetchNewLyric();
+      }
+    }
+  
+    return {
+      placeLyrics: placeLyrics
+    }
+  })();
+  
+    // Vue.js View Model
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        lyrics: "",
+        imgSrc: "",
+        track: ""
+      },
+      methods: {
+        regenerate: function() {
+          GiphyImgLoader.placeGif();
+          MMLyricsLoader.placeLyrics();
+        }
+      }
+    });
+
+
+    
