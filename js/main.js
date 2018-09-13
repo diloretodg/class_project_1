@@ -44,7 +44,7 @@ $(".music-note").on("click", function(){
 });  
 // starts fresh simon game
 function newGame() {
-   if(gameStart==false){ game.turn = 0;
+   if(game.gameStart==false){ game.turn = 0;
     game.currentSong = songArr
     simonSays(game.currentSong);}
 }
