@@ -1,16 +1,26 @@
+@media(min-width: 500px){
+
 body {
     background-color: black;
+    margin: 0;
+    align-content: center;
 }
+
+
+nav{
+    position:relative;
+    top: -12px;
+    height: 30px;
+}
+
 
 /*This is the style for our boxs' container. With it we can position and center the boxes in the browser.*/
 
+
 #instrument {
-    height: 116px;
-    width: 812px;
-    padding-right: 10px;
+    width: 100%;
     padding-top: 50px;
-    margin: auto;
-    position: absolute;
+    margin: 0 auto;
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
@@ -19,11 +29,19 @@ body {
 .box {
     width: 100px;
     height: 100px;
-    margin-left: 10px;
-    margin-top: 10px;
     float:left;
-    transform:rotate(45deg)
+    transform:rotate(45deg);
+    
 }
+
+.inside{
+    position: absolute;
+    transform: rotate(-45deg);
+    text-align: center;
+    top: 20px;
+    padding-left: 10px;
+}
+
 
 /*These are the styles that individually color our boxes and also determine the hover and active states*/
 
@@ -38,7 +56,7 @@ body {
 
 #c {
     background-color: #3e181b;
-    border: 3px solid #db1d2d;
+    border: .5px solid #db1d2d;
 }
 
 
@@ -53,7 +71,7 @@ body {
 
 #d {
     background-color: #422018;
-    border: 3px solid #f0421c;
+    border: .5px solid #f0421c;
 }
 
 
@@ -68,7 +86,7 @@ body {
 
 #e {
     background-color: #45391b;
-    border: 3px solid #fec02d;
+    border: .5px solid #fec02d;
 }
 
 
@@ -83,7 +101,7 @@ body {
 
 #f {
     background-color: #193c29;
-    border: 3px solid #20d071;
+    border: .5px solid #20d071;
 }
 
 
@@ -98,7 +116,7 @@ body {
 
 #g {
     background-color: #18323e;
-    border: 3px solid #1a9ddb;
+    border: .5px solid #1a9ddb;
 }
 
 
@@ -113,7 +131,7 @@ body {
 
 #a {
     background-color: #331f35;
-    border: 3px solid #a13fad;
+    border: .5px solid #a13fad;
 }
 
 
@@ -128,25 +146,29 @@ body {
 
 #b {
     background-color: #43293d;
-    border: 3px solid #f26fd4;
+    border: .5px solid #f26fd4;
 }
 
 #reset {
     background-color: #1a9ddb;
-    left: 45%;
-    top: 10%;
-    text-align: center;
-    position: absolute;
+    margin-top: 50px;
+    width: 50px;
+    height: 50px;
+    transform:rotate(45deg);
+
+}
+
+#reset:hover {
+    background-color:#6f3a62;
+    cursor: pointer;
 }
 
 #reset:active {
+    align-content: center;
     border: 3px solid #1a9ddb;
     background-color: darkblue;
-}
 
-#song-1 {
-    background-color: orangered;
-    position: absolute;
-    left: 45%;
-    top: 25%;
-}
+
+@media(max-width: 768px){
+=======
+
