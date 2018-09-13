@@ -32,9 +32,13 @@ var songArr = [
 
 var game = {
     turn: 0,
+    sequence: 0,
     currentSong: songArr,
+    playerChosen: [],
     correctNote: "",
     playerChoice: "",
+    yourTurn: false,
+
   };
 
 
@@ -45,10 +49,13 @@ $("#reset").on("click", function(){
 });
 
 $(".music-note").on("click", function(){
-    var note = $(this).attr("data-note");
-    play(note);
-    playerTurn(note)
-  });
+    if (game.yourTurn == true){
+        var note = $(this).attr("data-note");
+        play(note);
+        playerTurn(note);
+    }
+});
+    
 
 function newGame() {
     game.turn = 0;
@@ -57,24 +64,37 @@ function newGame() {
 }
 
 function playerTurn(n) {
+    game.yourTurn = false;
     game.playerChoice = n;
-    game.correctNote = game.currentSong[game.turn];
-    if (game.playerChoice == game.currentSong){
-        console.log("correct");
-        game.turn++;
-        simonSays(game.currentSong);
-    } else {
+    game.playerChosen.push(game.playerChoice);  
+    game.correctNote = game.currentSong[game.sequence].note;
+    if(game.playerChoice != game.correctNote){
         console.log("wrong");
         simonSays(game.currentSong);
+    } else {
+        game.sequence ++;
+        game.yourTurn = true;
+        if(game.sequence > game.turn) {
+            game.turn ++;
+            console.log("correct");
+            simonSays(game.currentSong);
+        }
     }
 }
 
 function simonSays(s) {
-    for (var i = 0; i <= game.turn; i ++) {
-        setTimeout(function(index) {
-        play(s[index].note)
-        }.bind(null, i), (i) * 1000)
-    }
+    game.yourTurn = false;
+    game.sequence = 0;
+    game.playerChosen = [];
+    setTimeout(function(){
+        for (var i = 0; i <= game.turn; i ++) {
+            setTimeout(function(index) {
+                play(s[index].note);
+                game.yourTurn = true;
+            }.bind(null, i), (i) * 1000)
+        }
+    }, 2000);
+    
 }
 
 
