@@ -1,4 +1,10 @@
+*{
+    color: white;
+}
 .aboutImg {
     width: 300px;
     height: 300px;
+}
+hr {
+    color:white;
 }
