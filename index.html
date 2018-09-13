@@ -7,39 +7,42 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Link to Firebase Database -->
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <title>My Music Box</title>
+  <title>Meistro Music Box</title>
+    
   <audio id="cAudio">
     <source src="media/notes_mp3/c_note.mp3" type="audio/mp3">
     <!-- <source src="media/notes_ogg/c_note.ogg" type="audio/ogg"> -->
     <!-- <source src="media/notes_wav/c_note.wav" type="audio/wav"> -->
   </audio>
-  <audio id="dAudio">
+  <audio id="dAudio" preload="auto">
     <source src="media/notes_mp3/d_note.mp3" type="audio/mp3">
     <!-- <source src="media/notes_ogg/d_note.ogg" type="audio/ogg"> -->
     <!-- <source src="media/notes_wav/d_note.wav" type="audio/wav"> -->
   </audio>
-  <audio id="eAudio">
+  <audio id="eAudio" preload="auto">
     <source src="media/notes_mp3/e_note.mp3" type="audio/mp3">
     <!-- <source src="media/notes_ogg/e_note.ogg" type="audio/ogg"> -->
     <!-- <source src="media/notes_wav/e_note.wav" type="audio/wav"> -->
   </audio>
-  <audio id="fAudio">
+  <audio id="fAudio" preload="auto">
     <source src="media/notes_mp3/f_note.mp3" type="audio/mp3">
     <!-- <source src="media/notes_ogg/f_note.ogg" type="audio/ogg"> -->
     <!-- <source src="media/notes_wav/f_note.wav" type="audio/wav"> -->
   </audio>
-  <audio id="gAudio">
+  <audio id="gAudio" preload="auto">
     <source src="media/notes_mp3/g_note.mp3" type="audio/mp3">
     <!-- <source src="media/notes_ogg/g_note.ogg" type="audio/ogg"> -->
     <!-- <source src="media/notes_wav/g_note.wav" type="audio/wav"> -->
   </audio>
-  <audio id="aAudio">
+  <audio id="aAudio" preload="auto">
     <source src="media/notes_mp3/a_note.mp3" type="audio/mp3">
     <!-- <source src="media/notes_ogg/a_note.ogg" type="audio/ogg"> -->
     <!-- <source src="media/notes_wav/a_note.wav" type="audio/wav"> -->
   </audio>
-  <audio id="bAudio">
+  <audio id="bAudio" preload="auto">
     <source src="media/notes_mp3/b_note.mp3" type="audio/mp3">
     <!-- <source src="media/notes_ogg/b_note.ogg" type="audio/ogg"> -->
     <!-- <source src="media/notes_wav/b_note.wav" type="audio/wav"> -->
@@ -47,19 +50,57 @@
   <link href="css/main.css"  rel="stylesheet" type="text/css"/>
   
 </head>
+
 <body>
-    <iframe width="560" height="315" class="musicVideo" src="https://www.youtube.com/embed/dASqLXiuomY?start=20" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   
+  <nav class="ui inverted black menu">
+    <h3 class="header item">Meistro Music Box</h3>
+    <a class="item">Leaders</a>
+    <a class="item">About</a>
+    <a class="item">Donate</a>
+  </nav>
+
+  <div class="ui container">
+
+    <div class="ui grid">
+      <div class="row">
+        <div class="seven wide column"></div>
+          <div class="two wide column">
+          <div id="reset">
+              <i class="redo"></i>
+          </div>
+        </div>
+         <iframe width="560" height="315" class="musicVideo" src="https://www.youtube.com/embed/dASqLXiuomY?start=20" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Qx2gvHjNhQ0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-    <div id="instrument">
-    <a id="c" class="box music-note" data-note="cAudio"></a>
-    <a id="d" class="box music-note" data-note="dAudio"></a>
-    <a id="e" class="box music-note" data-note="eAudio"></a>
-    <a id="f" class="box music-note" data-note="fAudio"></a>
-    <a id="g" class="box music-note" data-note="gAudio"></a>
-    <a id="a" class="box music-note" data-note="aAudio"></a>
-    <a id="b" class="box music-note" data-note="bAudio"></a>
+
+
+        <div class="seven wide column"></div>
+    </div>
+      <div class="row">
+      <div class="three wide column"></div>
+
+      <div class=" seven wide column" id="instrument">
+        <div class="row">
+        <a id="c" class="box music-note" data-note="cAudio"></a>
+        <a id="d" class="box music-note" data-note="dAudio"></a>
+        <a id="e" class="box music-note" data-note="eAudio"></a>
+        <a id="f" class="box music-note" data-note="fAudio"></a>
+        </div>
+        <div class="row">
+        <a id="g" class="box music-note" data-note="gAudio"></a>
+        <a id="a" class="box music-note" data-note="aAudio"></a>
+        <a id="b" class="box music-note" data-note="bAudio"></a>
+        <a id="c" class="box music-note" data-note="cAudio"></a>
+        </div>
+      </div>
+      <div class="three wide column"></div>
+      </div>
+      
+      </div>
+
   </div>
-  <div id="reset" class="box">Reset</div>/
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
