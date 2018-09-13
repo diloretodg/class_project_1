@@ -12,8 +12,9 @@ var noteIntervals = [];
 $(document).on("click", ".music-note", function(){
     var note = $(this).attr("data-note");
     play(note);
-    console.log("playing "+ note);   
-    noteIntervals.push(setInterval(function() {play(note) }, 2000))});
+    console.log("playing "+ note);
+    noteIntervals.push(note);
+    });
 
 
 // clear all playing notes
