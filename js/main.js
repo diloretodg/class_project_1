@@ -107,14 +107,3 @@ function play(n) {
     console.log("playing "+ n + " audio file");
     console.log(audio);
 }; 
-
-
-
-// /////////// light up notes
-// function lightup(tile) {
-//     var $tile = $('[data-tile=' + tile + ']').addClass('lit');
-//     window.setTimeout(function() {
-//         $tile.removeClass('lit');
-//     }, 300);
-
-// }
