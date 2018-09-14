@@ -17,6 +17,7 @@ var songArr = [
     {note: "e3Audio", sequence: 14},
 ]
 
+var currentNote;
 // relevant game val
 var game = {
     turn: 0,
@@ -27,6 +28,7 @@ var game = {
     playerChoice: "",
     yourTurn: false,
     gameStart: false,
+    score: 0 
 
   };
 // event listener for game start
@@ -44,9 +46,12 @@ $(".music-note").on("click", function(){
 });  
 // starts fresh simon game
 function newGame() {
-   if(game.gameStart==false){ game.turn = 0;
-    game.currentSong = songArr
-    simonSays(game.currentSong);}
+   if(game.gameStart==false){ 
+        game.turn = 0;
+        game.currentSong = songArr
+        game.score = 0
+        simonSays(game.currentSong);
+    }
 }
 // allows player turn up to max length
 function playerTurn(n) {
@@ -84,13 +89,32 @@ function simonSays(s) {
 }
 // plays our notes
 function play(n) {
+
+    currentNote = $("a[data-note="+ n +"]").addClass("light");
+    window.setTimeout(function() {
+        currentNote.removeClass("light");
+    }, 300);
+   
+    
     var audio = document.getElementById(n);
+
     if (audio.paused) {
         audio.play();
     }else{
         audio.currentTime = 0
-    }
+    };
 
-    console.log("playing "+ n + " audio file")
-    console.log(audio)
+    console.log("playing "+ n + " audio file");
+    console.log(audio);
 }; 
+
+
+
+// /////////// light up notes
+// function lightup(tile) {
+//     var $tile = $('[data-tile=' + tile + ']').addClass('lit');
+//     window.setTimeout(function() {
+//         $tile.removeClass('lit');
+//     }, 300);
+
+// }
