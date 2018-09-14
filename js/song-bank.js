@@ -1,4 +1,4 @@
-var songs = [
+var songBank = [
     {
         songName:"Yankee Doodle",
         songQuery:"test.song.no-data",
