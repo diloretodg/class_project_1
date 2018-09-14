@@ -1,28 +1,11 @@
 var noteIntervals = [];
 // test song function
-var songArr = [
-    {note: "f3Audio", sequence: 1},
-    {note: "f3Audio", sequence: 2},
-    {note: "g3Audio", sequence: 3},
-    {note: "a3Audio", sequence: 4},
-    {note: "f3Audio", sequence: 5},
-    {note: "a3Audio", sequence: 6},
-    {note: "g3Audio", sequence: 7},
-    {note: "c3Audio", sequence: 8},
-    {note: "f3Audio", sequence: 9},
-    {note: "f3Audio", sequence: 10},
-    {note: "g3Audio", sequence: 11},
-    {note: "a3Audio", sequence: 12},
-    {note: "f3Audio", sequence: 13},
-    {note: "e3Audio", sequence: 14},
-]
-
 var currentNote;
 // relevant game val
 var game = {
     turn: 0,
     sequence: 0,
-    currentSong: songArr,
+    currentSong: songBank[Math.floor(Math.random() * songBank.length)].songArr,
     playerChosen: [],
     correctNote: "",
     playerChoice: "",
@@ -48,7 +31,7 @@ $(".music-note").on("click", function(){
 function newGame() {
    if(game.gameStart==false){ 
         game.turn = 0;
-        game.currentSong = songArr
+        game.currentSong = songBank[Math.floor(Math.random() * songBank.length)].songArr;
         game.score = 0
         simonSays(game.currentSong);
     }
@@ -107,14 +90,3 @@ function play(n) {
     console.log("playing "+ n + " audio file");
     console.log(audio);
 }; 
-
-
-
-// /////////// light up notes
-// function lightup(tile) {
-//     var $tile = $('[data-tile=' + tile + ']').addClass('lit');
-//     window.setTimeout(function() {
-//         $tile.removeClass('lit');
-//     }, 300);
-
-// }
