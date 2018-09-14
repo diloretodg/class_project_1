@@ -6,6 +6,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Meistro Music Box - About</title>
   <!-- firebase might need to go in the body-->
+  <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
   <!-- font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <!-- google fonts -->
@@ -33,19 +34,16 @@
         <i class="circular users icon"></i>        
         </h1>
   </header>
+  <!-- header pieces seemed to work best outside the header (may need to refactor) -->
   <h1 class="ui center large" id="lbHeader">Leader Board:</h1>
   <h4 class="ui center small" id="topTenHeader">(Live Top Ten)</h4>
 
 <div class="ui container">
     <div class="ui grid">
-        <!-- basic table with top ten player info 
-        will need to have firebase linked into some of these cells -->
+        <!-- basic table with top ten player info -->
     <div class="four wide column"></div>
     <div class="seven wide column">
         <table class="ui very basic collapsing celled table background_color">
-       <!-- added a background class to have something there... -->
-       <div class="background_color">
-        
         <thead>
             <tr><th> <h4>Players</h4></th>
             <th><h4>High Scrore</h4></th>
@@ -59,7 +57,6 @@
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
                    <h6>1st Place Player Placeholder</h6> 
-
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
                         <p>placeholder "nickname" </p>
@@ -79,7 +76,6 @@
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
                   <h6>2nd Place Player Placeholder</h6>  
-
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
                         <p>placeholder "nickname" </p>
@@ -99,7 +95,6 @@
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
                         <h6>3nd Place Player Placeholder</h6>  
-
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
                         <p>placeholder "nickname" </p>
@@ -119,8 +114,6 @@
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
                   <h6>4th Place Player Placeholder</h6>  
-                   
-
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
                         <p>placeholder "nickname" </p>
@@ -140,7 +133,6 @@
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
                   <h6>5th Place Player Placeholder</h6>  
-                
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
                         <p>placeholder "nickname" </p>
@@ -160,7 +152,6 @@
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
                   <h6>6th Place Player Placeholder</h6>  
-
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
                         <p>placeholder "nickname" </p>
@@ -241,7 +232,6 @@
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
                   <h6>10th Place Player Placeholder</h6>                    
-
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
                         <p>placeholder "nickname" </p>
@@ -258,7 +248,6 @@
         </table>
     </div>
     <div class="three wide column"></div>
-
     </div>
 </div>
 <div class="ui inverted divider"></div>
@@ -268,7 +257,25 @@ with these icons: NEED AJUSTMENT VERY SMALL-->
 <br>
 <i class="fas fa-tablet" id="tablet"></i>
 <br><br>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
+<!-- =============THIS IS TO TEST, SHOULD BE PLACED IN INDEX HTML BUT I DIDNT WANT TO MESS WITH CHRIS' STYLING=============== -->
+<form class="ui form">
+        <div class="field">
+            <label><h4>Full Name</h4></label>
+            <!-- added id for name input -->
+            <input type="text" name="name" id="nameInput" placeholder="ex:Toby Mcquire">
+        </div>
+        <div class="field">
+            <label><h4>Your NickName: (3 characters)</h4></label>
+            <!-- added id for nickname input -->
+            <input type="text" name="nickname" id="nickNameInput" placeholder="ex: TOM">
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+      </form>
+<!-- ==================end of test for firebase functionality will need install this in index.html when ready================== -->
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
   <script src="js/main.js"></script>
+  <!-- added firebase js file -->
+  <script src="js/firebase.js"></script>
 </body>
 </html>
