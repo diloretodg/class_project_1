@@ -5,9 +5,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Meistro Music Box - About</title>
+  <!-- firebase might need to go in the body-->
+
+  <!-- font awesome -->
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <!-- linking css files -->
   <link href="css/main.css"  rel="stylesheet" type="text/css"/>
   <link href="css/leaders.css"  rel="stylesheet" type="text/css"/>
   
+
 </head>
 
 <body>
@@ -32,24 +38,26 @@
     <div class="ui grid">
         <!-- header1 text -->
         <div class="row">
-            <div class="seven wide column"></div>
-            <div class="seven wide column">
+            <div class="six wide column"></div>
+            <div class="nine wide column">
                 <h1>Leader Board:</h1>
                 <h4>(Live Top Ten)</h4>
             </div>
-            <div class="seven wide column"></div>
+            <div class="six wide column"></div>
         </div>
 
         <!-- basic table with top ten player info 
         will need to have firebase linked into some of these cells -->
-    <div class="five wide column"></div>
+    <div class="four wide column"></div>
     <div class="seven wide column">
-        <table class="ui very basic collapsing celled table">
+        <table class="ui very basic collapsing celled table background_color">
+       <!-- added a background class to have something there... -->
+       <div class="background_color">
         <thead>
             <tr><th> <h3>Players</h3></th>
             <th><h3>High Scrore</h3></th>
         </tr></thead>
-        <tbody>
+        <tbody >
             <tr>
             <td>
                 <h4 class="ui image header">
@@ -57,7 +65,7 @@
                 <!-- id is for a presumable form with a submit that the user would use to input their name 
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
-                    1st Place Player Placeholder
+                   <h6>1st Place Player Placeholder</h6> 
 
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
@@ -250,6 +258,7 @@
                 "firebase Should Generate info Here"
             </td>
             </tr>
+        </div>
         </tbody>
         </table>
     </div>
