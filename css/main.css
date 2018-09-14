@@ -49,12 +49,23 @@ nav{
     background-color:#661920;
     cursor: pointer;
 }
+#c2:hover {
+    background-color:#661920;
+    cursor: pointer;
+}
 
 #c:active {
     background-color:#db1d2d;
 }
+#c2:active {
+    background-color:#db1d2d;
+}
 
 #c {
+    background-color: #3e181b;
+    border: .5px solid #db1d2d;
+}
+#c2 {
     background-color: #3e181b;
     border: .5px solid #db1d2d;
 }
@@ -183,6 +194,38 @@ iframe {
     /* margin: 10px, 25%, 10px, 25%; */
 }
 
+/* light up styles */
+#c.light {
+    background-color:#db1d2d;
+}
+#d.light {
+    background-color:#f0421c;
+}
+#e.light {
+    background-color:#fec02d;
+}
+#f.light {
+    background-color:#20d071;
+}
+#g.light {
+    background-color:#1a9ddb;
+}
+#a.light {
+    background-color:#a13fad
+}
+#b.light {
+    background-color:#f26fd4;
+}
+#c2.light {
+    background-color:#db1d2d;
+}
 
-@media(max-width: 768px){
+}
+
+
+@media(max-width: 768px){}
+
+
+
+
 
