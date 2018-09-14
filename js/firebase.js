@@ -36,7 +36,7 @@ $(document).on("click", ".submit", function(event){
 //database child_added for the inputed info from the new colaborator
 database.ref().on("child_added", function(childSnapshot){
     console.log(childSnapshot.val());
-    console.log(childSnapshot.val().name); //saying undefined?
+    console.log(childSnapshot.val().userName); //saying undefined?
     console.log(childSnapshot.val().userNickName);//saying undefined?
     console.log(childSnapshot.val().userScore);//saying undefined?
 
@@ -47,8 +47,8 @@ database.ref().on("child_added", function(childSnapshot){
             */
 });
 //added errorObject function just in case something goes wonky
-function(errorObject) {
-    console.log("Errors handled: " + errorObject.code);
+// function(errorObject) {
+//     console.log("Errors handled: " + errorObject.code);
 
 
 
