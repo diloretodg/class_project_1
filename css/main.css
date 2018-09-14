@@ -195,6 +195,32 @@ nav{
     
 }
 
+#nextSongBtnAlign{
+    align-content: center;
+    align-items: center;
+    vertical-align: middle;
+    top:50%;
+    bottom:-50%;
+}
+.rotate {
+
+    /* Safari */
+    -webkit-transform: rotate(-70deg);
+    
+    /* Firefox */
+    -moz-transform: rotate(-70deg);
+    
+    /* IE */
+    -ms-transform: rotate(-70deg);
+    
+    /* Opera */
+    -o-transform: rotate(-70deg);
+    
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    
+    }
+
 /* light up styles */
 #c.light {
     background-color:#db1d2d;
