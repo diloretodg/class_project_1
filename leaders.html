@@ -6,8 +6,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Meistro Music Box - About</title>
   <!-- firebase might need to go in the body-->
-
   <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <!-- linking css files -->
   <link href="css/main.css"  rel="stylesheet" type="text/css"/>
@@ -32,20 +33,11 @@
         <i class="circular users icon"></i>        
         </h1>
   </header>
-
+  <h1 class="ui center large" id="lbHeader">Leader Board:</h1>
+  <h4 class="ui center small" id="topTenHeader">(Live Top Ten)</h4>
 
 <div class="ui container">
     <div class="ui grid">
-        <!-- header1 text -->
-        <div class="row">
-            <div class="six wide column"></div>
-            <div class="nine wide column">
-                <h1>Leader Board:</h1>
-                <h4>(Live Top Ten)</h4>
-            </div>
-            <div class="six wide column"></div>
-        </div>
-
         <!-- basic table with top ten player info 
         will need to have firebase linked into some of these cells -->
     <div class="four wide column"></div>
@@ -53,9 +45,10 @@
         <table class="ui very basic collapsing celled table background_color">
        <!-- added a background class to have something there... -->
        <div class="background_color">
+        
         <thead>
-            <tr><th> <h3>Players</h3></th>
-            <th><h3>High Scrore</h3></th>
+            <tr><th> <h4>Players</h4></th>
+            <th><h4>High Scrore</h4></th>
         </tr></thead>
         <tbody >
             <tr>
@@ -85,7 +78,7 @@
                 <!-- id is for a presumable form with a submit that the user would use to input their name 
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
-                    2nd Place Player Placeholder
+                  <h6>2nd Place Player Placeholder</h6>  
 
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
@@ -105,7 +98,7 @@
                 <!-- id is for a presumable form with a submit that the user would use to input their name 
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
-                    3rd Place Player Placeholder
+                        <h6>3nd Place Player Placeholder</h6>  
 
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
@@ -125,7 +118,8 @@
                 <!-- id is for a presumable form with a submit that the user would use to input their name 
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
-                    4th Place Player Placeholder
+                  <h6>4th Place Player Placeholder</h6>  
+                   
 
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
@@ -145,7 +139,27 @@
                 <!-- id is for a presumable form with a submit that the user would use to input their name 
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
-                    5th Place Player Placeholder
+                  <h6>5th Place Player Placeholder</h6>  
+                
+                    <!-- may not need this sub header but it may be fun to integrate a nickname -->
+                    <div class="sub header">
+                        <p>placeholder "nickname" </p>
+                </div>
+                </div>
+            </h4></td>
+            <!-- firebase integrated score -->
+            <td class="firebase_score">
+                "firebase Should Generate info Here"
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <h4 class="ui image header">
+                <img src="https://cdn4.vectorstock.com/i/1000x1000/14/58/pixel-avatar-male-cartoon-retro-game-style-vector-17311458.jpg" class="ui mini rounded image">
+                <!-- id is for a presumable form with a submit that the user would use to input their name 
+                        preferably a format like "Name= _ _ _"  -->
+                <div class="content" id="formInputName">
+                  <h6>6th Place Player Placeholder</h6>  
 
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
@@ -165,7 +179,7 @@
                 <!-- id is for a presumable form with a submit that the user would use to input their name 
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
-                    6th Place Player Placeholder
+                        <h6>7th Place Player Placeholder</h6>                    
 
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
@@ -185,7 +199,8 @@
                 <!-- id is for a presumable form with a submit that the user would use to input their name 
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
-                    7th Place Player Placeholder
+                  <h6>8th Place Player Placeholder</h6>  
+                  
 
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
@@ -205,7 +220,7 @@
                 <!-- id is for a presumable form with a submit that the user would use to input their name 
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
-                    8th Place Player Placeholder
+                  <h6>9th Place Player Placeholder</h6>                      
 
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
@@ -225,27 +240,7 @@
                 <!-- id is for a presumable form with a submit that the user would use to input their name 
                         preferably a format like "Name= _ _ _"  -->
                 <div class="content" id="formInputName">
-                    9th Place Player Placeholder
-
-                    <!-- may not need this sub header but it may be fun to integrate a nickname -->
-                    <div class="sub header">
-                        <p>placeholder "nickname" </p>
-                </div>
-                </div>
-            </h4></td>
-            <!-- firebase integrated score -->
-            <td class="firebase_score">
-                "firebase Should Generate info Here"
-            </td>
-            </tr>
-            <tr>
-            <td>
-                <h4 class="ui image header">
-                <img src="https://cdn4.vectorstock.com/i/1000x1000/14/58/pixel-avatar-male-cartoon-retro-game-style-vector-17311458.jpg" class="ui mini rounded image">
-                <!-- id is for a presumable form with a submit that the user would use to input their name 
-                        preferably a format like "Name= _ _ _"  -->
-                <div class="content" id="formInputName">
-                    10th Place Player Placeholder
+                  <h6>10th Place Player Placeholder</h6>                    
 
                     <!-- may not need this sub header but it may be fun to integrate a nickname -->
                     <div class="sub header">
@@ -266,6 +261,13 @@
 
     </div>
 </div>
+<div class="ui inverted divider"></div>
+<!-- would be neat to showcase the availability of this pages being tablet and mobile friendly
+with these icons: NEED AJUSTMENT VERY SMALL-->
+<i class="fas fa-mobile" id="phone"></i>
+<br>
+<i class="fas fa-tablet" id="tablet"></i>
+<br><br>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
   <script src="js/main.js"></script>
 </body>

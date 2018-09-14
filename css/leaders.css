@@ -1,7 +1,7 @@
 *{
     color: white;
 }
-h1, h2, h3, h4, h5, h6, tbody, tr, td, p {
+h1, h2, h4, h5, h6, tbody, tr, td, p {
     color:white;
     font-family: 'Press Start 2P', cursive;
 }
@@ -10,6 +10,10 @@ p {
     font-size: 10px;
 }
 
+#lbHeader, #topTenHeader, #tablet, #phone {
+    text-align: center;
+    align-content: center;
+}
 /* ref html line 54. 
 invisioned a background color that was only within the table opacity was faint maybe .3 just to showcase 
 the boundryies of the table a bit, NOT WORKING YET maybe if you wanted something with a url:

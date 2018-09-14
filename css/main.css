@@ -1,8 +1,11 @@
 @media(min-width: 1200px){
 
 body {
-    background-color: black;
+background-color: black;
     margin: auto;
+    background-image: url("../media/images/newBackground.png");
+    margin: 0;
+  
     align-content: center;
 }
 
