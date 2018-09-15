@@ -87,6 +87,18 @@ nav.ui.inverted.menu{
     color: white;
 }
 
+h4.nameTune {
+    display: inline;
+    color: white;
+    padding: opx auto 0px auto;
+}
+
+#tuneInput, # {
+    color: white;
+    text-align: center;
+    align-content: center;
+}
+
 /*This is the style for our boxs' container. With it we can position and center the boxes in the browser.*/
 #instrument.ui.segment{
     background: none;
@@ -245,6 +257,7 @@ nav.ui.inverted.menu{
     width: 75px;
     height: 75px;
     transform:rotate(45deg);
+    color: white;
 
 }
 
