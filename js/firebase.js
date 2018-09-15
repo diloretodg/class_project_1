@@ -20,14 +20,15 @@ $(document).on("click", ".submit", function(event){
     //for the form inputs to be captured for firebase
     var name = $("#nameInput").val().trim();
     var nickName = $("#nickNameInput").val().trim();
-    var score = $("#scoreTracker").val().trim();
+    // var score = $("#scoreTracker").val();
+    
     //user input for firebase imagine breakdown will be:
         // - user name and nickname will be input on index.html
         // - score will be calculated possibly with a function on either time lasted or songs correctly completed.
     var newPlayer ={
         userName: name,
         userNickName: nickName,
-        userScore: score
+        // userScore: score
     };
     //pushing into firebase
     database.ref().push(newPlayer);
