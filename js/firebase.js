@@ -1,16 +1,42 @@
 // ===============initial firebase==============================================================================
 // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyChswfB5HAG1cQcjkai_26cvtFHtYqpNYU",
-    authDomain: "project1-a46e9.firebaseapp.com",
-    databaseURL: "https://project1-a46e9.firebaseio.com",
-    projectId: "project1-a46e9",
-    storageBucket: "project1-a46e9.appspot.com",
-    messagingSenderId: "1004479758001"
-  };
-  firebase.initializeApp(config);
+var config = {
+apiKey: "AIzaSyChswfB5HAG1cQcjkai_26cvtFHtYqpNYU",
+authDomain: "project1-a46e9.firebaseapp.com",
+databaseURL: "https://project1-a46e9.firebaseio.com",
+projectId: "project1-a46e9",
+storageBucket: "project1-a46e9.appspot.com",
+messagingSenderId: "1004479758001"
+};
+firebase.initializeApp(config);
 
-  var database = firebase.database();
+var database = firebase.database();
+
+// ============== Add Username to Game Info column ====================
+// Clear username
+var username = "";
+
+ //on Click button for adding username
+$("#add-user").on("click", function(event) {
+    event.preventDefault();
+     
+    // Get username input
+    username = $("#nameInput").val().trim();
+    console.log($("#nameInput").val().trim());
+    // Save changes to Firebase
+    database.ref().set({
+        username: username
+    });
+    // Create Firebase event for adding username to the database 
+    database.ref().on("value", function(snapshot) {
+        console.log(snapshot.val());
+         // Store snapshot into a variable
+        console.log(username);
+         // Append the new row to the table
+        $("#username").text(snapshot.val().username);
+    });
+});
+
 
   // ===========start file relating to database here ==============================================================
 //this is the fuction for the form for the name and acct to be imported
@@ -62,7 +88,7 @@ function limitingRows(){
     var rowsInTable = table.rows.length; 
     //trying to creat an if statement that that says once max is met stop inputing data
     if (rowsInTable > maxRows) {
-        for (var i =0; i<maxRows; i++) {
+        for (var i =1; i<maxRows; i++) {
 
         }
     }
