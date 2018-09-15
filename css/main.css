@@ -1,21 +1,86 @@
-@media(min-width: 1200px){
-
 body {
-background-color: black;
-    margin: auto;
-    background-image: url("../media/images/newBackground.png");
-    margin: 0;
-  
-    align-content: center;
+    background-color: black;
+        background-image: url("../images/newBackground.png");
+        background-size: cover;
+        margin: 0 auto;
+        min-width: 413px;
+    }
+
+
+
+.ui.grid{
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 15px;
+}
+
+.musicVideo{
+display: flex;
+justify-content: center;
+
+}
+
+.funFacts.ui.segment{
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(161, 63, 173, 0.5);
+    height: 100%;
+    background: linear-gradient(-80deg, rgba(6, 11, 46, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(6, 11, 46, 0.3) 90%);
+ 
+    
+}
+
+.ui.compact.segment{
+    background: none;
+    border: none;
+}
+
+.ui.submit.button{
+    border: 1px solid rgb(161, 63, 173);
+    background: none;
+    color: rgb(161, 63, 173);
+}
+
+.ui.input > input{
+    background: none;
+    border: 1px solid rgb(161, 63, 173);
 }
 
 
-nav{
-    position:relative;
-    top: -12px;
-    height: 30px;
+
+i.sign.in.icon{
+    color: rgb(161, 63, 173);
+    
 }
 
+nav.ui.inverted.menu{
+    background: linear-gradient(180deg, rgba(24, 15, 156, 0.3) 0%,rgba(0, 0, 0, 0.4) 70%, rgba(78, 39, 83, 0.3));
+    border-bottom: 1px solid rgba(161, 63, 173, 0.2);
+}
+
+.ui.labeled.icon.button{
+    background:none;
+    border: 1px solid rgb(161, 63, 173);
+    color: rgb(161, 63, 173);
+
+}
+
+.musicVideo.ui.segment{
+    border: 1px solid rgba(161, 63, 173, 0.3);
+    background: linear-gradient(85deg, rgba(161, 63, 173, 0.2) 0%, rgb(0, 0, 0) 10%,rgb(0, 0, 0) 85%,rgba(161, 63, 173, 0.2) 100%);
+
+
+}
+
+.anyInfo.ui.segment{
+        display: flex;
+        justify-content: center;
+        border: 1px solid rgba(161, 63, 173, 0.5);
+        height: 100%;
+        background: linear-gradient(-80deg, rgba(6, 11, 46, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(6, 11, 46, 0.3) 90%);
+     
+        
+    }
 
 /*This is the style for our boxs' container. With it we can position and center the boxes in the browser.*/
 
@@ -247,10 +312,6 @@ nav{
     background-color:#db1d2d;
 }
 
-}
-
-
-@media(max-width: 768px){}
 
 
 
