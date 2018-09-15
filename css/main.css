@@ -1,7 +1,8 @@
 body {
     background-color: black;
-        background-image: url("../images/newBackground.png");
+        background-image: url("../media/images/newBackground.png");
         background-size: cover;
+        overflow: hidden;
         margin: 0 auto;
         min-width: 413px;
     }
@@ -83,13 +84,14 @@ nav.ui.inverted.menu{
     }
 
 /*This is the style for our boxs' container. With it we can position and center the boxes in the browser.*/
-
+#instrument.ui.segment{
+    background: none;
+    border: none;
+}
 
 #instrument {
-    width: 100%;
-    padding-top: 50px;
-    margin: 0 auto;
-    top: 0; left: 0; bottom: 0; right: 0;
+    display: flex;
+    justify-content: center;
 }
 
 /*This is the style that give our music boxes shape*/
@@ -228,13 +230,18 @@ nav.ui.inverted.menu{
     border: .5px solid #f26fd4;
 }
 
+.reset-holder.ui.segment{
+    background: none;
+    border: none;
+
+}
+
 #reset {
     background-color: #1a9ddb;
-    text-align: center;
-    margin-top: 50px;
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     transform:rotate(45deg);
+
 }
 
 #reset:hover {
