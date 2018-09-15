@@ -16,6 +16,21 @@ var game = {
   };
 // event listener for game start
 $("#reset").on("click", function(){
+
+    // Change what is saved in firebase
+    database.ref().set({
+        name: name,
+        age: age,
+        phone: phone
+      });
+      
+    // Take snapshot of score to save to Firebase
+    database.ref().on("value", function(snapshot) {
+        console.log(snapshot.val().score);
+
+    // Append score data to leaderboard
+
+
     newGame();
     // console.log("game start");
 });
