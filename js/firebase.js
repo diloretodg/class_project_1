@@ -1,5 +1,5 @@
 // ===============initial firebase==============================================================================
-  // Initialize Firebase
+// Initialize Firebase
   var config = {
     apiKey: "AIzaSyChswfB5HAG1cQcjkai_26cvtFHtYqpNYU",
     authDomain: "project1-a46e9.firebaseapp.com",
@@ -28,28 +28,49 @@ $(document).on("click", ".submit", function(event){
     var newPlayer ={
         userName: name,
         userNickName: nickName,
-        // userScore: score
+        // userScore: score          NOT PUSHING SCORE YET, need to figure out how to do this.
     };
-    //pushing into firebase
-    database.ref().push(newPlayer);
+    //pushing into firebase 
+    database.ref().push(newPlayer)
     console.log(newPlayer);
 });
 //database child_added for the inputed info from the new colaborator
 database.ref().on("child_added", function(childSnapshot){
     console.log(childSnapshot.val());
-    console.log(childSnapshot.val().userName); //saying undefined?
-    console.log(childSnapshot.val().userNickName);//saying undefined?
-    console.log(childSnapshot.val().userScore);//saying undefined?
-
-    //this will be useful when pulling down the info from firebase:
-            /*not sure how to emulate this:    
-                $(".previousPlayerData").append("<tr><td>" + childSnapshot.val().userName + childSnapshot.val().userNickName + "</td>"
-                + "<td>" + childSnapshot.val().score + "</td>);
-            */
-});
+    console.log(childSnapshot.val().userName); 
+    console.log(childSnapshot.val().userNickName);
+    // console.log(childSnapshot.val().userScore);
+   
+    // publishing data to the table
+    $(".previousPlayerName").append("<tr><td><h4 class='ui image header'><img src='https://cdn4.vectorstock.com/i/1000x1000/14/58/pixel-avatar-male-cartoon-retro-game-style-vector-17311458.jpg' class='ui mini rounded image'>" + "<h6>" + childSnapshot.val().userName + "</h6>" + "</td></tr>");
+    $(".previousPlayerNickName").append( " <td> " + childSnapshot.val().userNickName + "</td>");
+    //this should be in line with the userName data :
+            //$(".decendingScores").append("Score: " + childSnapshot.val().userScore);    
+},
 //added errorObject function just in case something goes wonky
-// function(errorObject) {
-//     console.log("Errors handled: " + errorObject.code);
+function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+
+});
+
+//==========NEED HELP HERE==================================================
+
+// table function for leaderboard 
+function limitingRows(){
+    var maxRows= 11 //counting the header as 1 row to ensure we do not have 9 player data's displayed
+    var table = $("#leaderBoard") //made a leaderboard id for tbody
+    var rowsInTable = table.rows.length; 
+    //trying to creat an if statement that that says once max is met stop inputing data
+    if (rowsInTable > maxRows) {
+        for (var i =0; i<maxRows; i++) {
+
+        }
+    }
+}
+//limitingRows();
+
+//=======end of limiting rows function ========================================
+
 
 
 
