@@ -72,7 +72,22 @@
                                   Create New Account
                                   <i class="user icon"></i>
                             </div>
-                        </div>
+ <!-- ======================form for data that will show up on leaderboard ==============-->
+                <form class="ui form">
+                    <div class="field">
+                        <label><h4>Full Name</h4></label>
+                        <!-- added id for name input -->
+                        <input type="text" name="name" id="nameInput" placeholder="ex:Toby Mcquire">
+                    </div>
+                    <div class="field">
+                        <label><h4>Your NickName: (3 characters)</h4></label>
+                        <!-- added id for nickname input -->
+                        <input type="text" name="nickname" id="nickNameInput" placeholder="ex: TOM">
+                    </div>
+                    <button class="ui button submit" type="submit">Submit</button>
+                  </form>
+ <!--================= end of player name form ======================================= -->
+                          </div>
                 </div>
             </div>
             <div class="six wide column">
@@ -105,5 +120,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
   <script src="js/song-bank.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/firebase.js"></script>
 </body>
 </html>
