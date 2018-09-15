@@ -1,5 +1,5 @@
 // ===============initial firebase==============================================================================
-  // Initialize Firebase
+// Initialize Firebase
   var config = {
     apiKey: "AIzaSyChswfB5HAG1cQcjkai_26cvtFHtYqpNYU",
     authDomain: "project1-a46e9.firebaseapp.com",
@@ -28,28 +28,31 @@ $(document).on("click", ".submit", function(event){
     var newPlayer ={
         userName: name,
         userNickName: nickName,
-        // userScore: score
+        // userScore: score          NOT PUSHING SCORE YET, need to figure out how to do this.
     };
-    //pushing into firebase
-    database.ref().push(newPlayer);
+    //pushing into firebase 
+    database.ref().push(newPlayer)
     console.log(newPlayer);
 });
 //database child_added for the inputed info from the new colaborator
 database.ref().on("child_added", function(childSnapshot){
     console.log(childSnapshot.val());
-    console.log(childSnapshot.val().userName); //saying undefined?
-    console.log(childSnapshot.val().userNickName);//saying undefined?
-    console.log(childSnapshot.val().userScore);//saying undefined?
+    console.log(childSnapshot.val().userName); 
+    console.log(childSnapshot.val().userNickName);
+    // console.log(childSnapshot.val().userScore);
 
     //this will be useful when pulling down the info from firebase:
-            /*not sure how to emulate this:    
+            
                 $(".previousPlayerData").append("<tr><td>" + childSnapshot.val().userName + childSnapshot.val().userNickName + "</td>"
-                + "<td>" + childSnapshot.val().score + "</td>);
-            */
-});
+                + "<td>" + childSnapshot.val().score + "</td>)
+        
+},
 //added errorObject function just in case something goes wonky
-// function(errorObject) {
-//     console.log("Errors handled: " + errorObject.code);
+function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+
+});
+
 
 
 
