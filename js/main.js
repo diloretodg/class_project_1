@@ -62,6 +62,7 @@ function playerTurn(n) {
             simonSays(game.currentSong);
         } else {
             game.sequence ++;
+            game.score = game.score + 100;  
             game.yourTurn = true;
 // once the sequence would be greater that the turn this ends the user turn, increments the game turn and starts next round of notes
             if(game.sequence > game.turn) {
