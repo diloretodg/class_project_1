@@ -1,258 +1,251 @@
 @media(min-width: 1200px){
 
-body {
-background-color: black;
-    margin: auto;
-    background-image: url("../media/images/newBackground.png");
-    margin: 0;
-  
-    align-content: center;
-}
-
-
-nav{
-    position:relative;
-    top: -12px;
-    height: 30px;
-}
-
-
-/*This is the style for our boxs' container. With it we can position and center the boxes in the browser.*/
-
-
-#instrument {
-    width: 100%;
-    padding-top: 50px;
-    margin: 0 auto;
-    top: 0; left: 0; bottom: 0; right: 0;
-}
-
-/*This is the style that give our music boxes shape*/
-
-.box {
-    width: 75px;
-    height: 75px;
-    float:left;
-    transform:rotate(45deg);
+    body {
+    background-color: black;
+        margin: auto;
+        background-image: url("../media/images/newBackground.png");
+        margin: 0;
+      
+        align-content: center;
+    }
     
-}
-
-.inside{
-    position: absolute;
-    transform: rotate(-45deg);
-    text-align: center;
-    top: 20px;
-    padding-left: 10px;
-}
-
-
-/*These are the styles that individually color our boxes and also determine the hover and active states*/
-
-#c:hover {
-    background-color:#661920;
-    cursor: pointer;
-}
-#c2:hover {
-    background-color:#661920;
-    cursor: pointer;
-}
-
-#c:active {
-    background-color:#db1d2d;
-}
-#c2:active {
-    background-color:#db1d2d;
-}
-
-#c {
-    background-color: #3e181b;
-    border: .5px solid #db1d2d;
-}
-#c2 {
-    background-color: #3e181b;
-    border: .5px solid #db1d2d;
-}
-
-
-#d:hover {
-    background-color:#6e2819;
-    cursor: pointer;
-}
-
-#d:active {
-    background-color:#f0421c;
-}
-
-#d {
-    background-color: #422018;
-    border: .5px solid #f0421c;
-}
-
-
-#e:hover {
-    background-color:#735b20;
-    cursor: pointer;
-}
-
-#e:active {
-    background-color:#fec02d;
-}
-
-#e {
-    background-color: #45391b;
-    border: .5px solid #fec02d;
-}
-
-
-#f:hover {
-    background-color:#1b613b;
-    cursor: pointer;
-}
-
-#f:active {
-    background-color:#20d071;
-}
-
-#f {
-    background-color: #193c29;
-    border: .5px solid #20d071;
-}
-
-
-#g:hover {
-    background-color:#184d65;
-    cursor: pointer;
-}
-
-#g:active {
-    background-color:#1a9ddb;
-}
-
-#g {
-    background-color: #18323e;
-    border: .5px solid #1a9ddb;
-}
-
-
-#a:hover {
-    background-color:#4e2753;
-    cursor: pointer;
-}
-
-#a:active {
-    background-color:#a13fad;
-}
-
-#a {
-    background-color: #331f35;
-    border: .5px solid #a13fad;
-}
-
-
-#b:hover {
-    background-color:#6f3a62;
-    cursor: pointer;
-}
-
-#b:active {
-    background-color:#f26fd4;
-}
-
-#b {
-    background-color: #43293d;
-    border: .5px solid #f26fd4;
-}
-
-#reset {
-    background-color: #1a9ddb;
-    text-align: center;
-    margin-top: 50px;
-    width: 50px;
-    height: 50px;
-    transform:rotate(45deg);
-}
-
-#reset:hover {
-    background-color:#6f3a62;
-    cursor: pointer;
-}
-
-#reset:active {
-    align-content: center;
-    border: 3px solid #1a9ddb;
-    background-color: darkblue;
-}
-
-.musicVideo {
-    position: relative;
-    border: 1px solid #1a9ddb;
-    text-align: center;
-
-}
-
-.funFacts{
-    border: 1px solid #a13fad;
     
-}
-
-#nextSongBtnAlign{
-    align-content: center;
-    align-items: center;
-    vertical-align: middle;
-    top:50%;
-    bottom:-50%;
-}
-.rotate {
-
-    /* Safari */
-    -webkit-transform: rotate(-70deg);
+    nav{
+        position:relative;
+        top: -12px;
+        height: 30px;
+    }
     
-    /* Firefox */
-    -moz-transform: rotate(-70deg);
     
-    /* IE */
-    -ms-transform: rotate(-70deg);
+    /*This is the style for our boxs' container. With it we can position and center the boxes in the browser.*/
     
-    /* Opera */
-    -o-transform: rotate(-70deg);
     
-    /* Internet Explorer */
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    #instrument {
+        width: 100%;
+        padding-top: 50px;
+        margin: 0 auto;
+        top: 0; left: 0; bottom: 0; right: 0;
+    }
+    
+    /*This is the style that give our music boxes shape*/
+    
+    .box {
+        width: 75px;
+        height: 75px;
+        float:left;
+        transform:rotate(45deg);
+        
+    }
+    
+    .inside{
+        position: absolute;
+        transform: rotate(-45deg);
+        text-align: center;
+        top: 20px;
+        padding-left: 10px;
+    }
+    
+    .username-input {
+        color: white;
+    }
+    
+    .gameInfo {
+        color: white;
+    }
+    
+    .gameInfo-table {
+        text-align: left;
+    }
+    
+    .form-control {
+        margin: 0px;
+    }
+    
+    p {
+        margin-bottom: 0px;
+    }
+    /*These are the styles that individually color our boxes and also determine the hover and active states*/
+    
+    #c:hover {
+        background-color:#661920;
+        cursor: pointer;
+    }
+    #c2:hover {
+        background-color:#661920;
+        cursor: pointer;
+    }
+    
+    #c:active {
+        background-color:#db1d2d;
+    }
+    #c2:active {
+        background-color:#db1d2d;
+    }
+    
+    #c {
+        background-color: #3e181b;
+        border: .5px solid #db1d2d;
+    }
+    #c2 {
+        background-color: #3e181b;
+        border: .5px solid #db1d2d;
+    }
+    
+    
+    #d:hover {
+        background-color:#6e2819;
+        cursor: pointer;
+    }
+    
+    #d:active {
+        background-color:#f0421c;
+    }
+    
+    #d {
+        background-color: #422018;
+        border: .5px solid #f0421c;
+    }
+    
+    
+    #e:hover {
+        background-color:#735b20;
+        cursor: pointer;
+    }
+    
+    #e:active {
+        background-color:#fec02d;
+    }
+    
+    #e {
+        background-color: #45391b;
+        border: .5px solid #fec02d;
+    }
+    
+    
+    #f:hover {
+        background-color:#1b613b;
+        cursor: pointer;
+    }
+    
+    #f:active {
+        background-color:#20d071;
+    }
+    
+    #f {
+        background-color: #193c29;
+        border: .5px solid #20d071;
+    }
+    
+    
+    #g:hover {
+        background-color:#184d65;
+        cursor: pointer;
+    }
+    
+    #g:active {
+        background-color:#1a9ddb;
+    }
+    
+    #g {
+        background-color: #18323e;
+        border: .5px solid #1a9ddb;
+    }
+    
+    
+    #a:hover {
+        background-color:#4e2753;
+        cursor: pointer;
+    }
+    
+    #a:active {
+        background-color:#a13fad;
+    }
+    
+    #a {
+        background-color: #331f35;
+        border: .5px solid #a13fad;
+    }
+    
+    
+    #b:hover {
+        background-color:#6f3a62;
+        cursor: pointer;
+    }
+    
+    #b:active {
+        background-color:#f26fd4;
+    }
+    
+    #b {
+        background-color: #43293d;
+        border: .5px solid #f26fd4;
+    }
+    
+    #reset {
+        background-color: #1a9ddb;
+        text-align: center;
+        margin-top: 50px;
+        width: 50px;
+        height: 50px;
+        transform:rotate(45deg);
+    }
+    
+    #reset:hover {
+        background-color:#6f3a62;
+        cursor: pointer;
+    }
+    
+    #reset:active {
+        align-content: center;
+        border: 3px solid #1a9ddb;
+        background-color: darkblue;
+    }
+    
+    .musicVideo {
+        position: relative;
+        border: 1px solid #1a9ddb;
+        text-align: center;
     
     }
-
-/* light up styles */
-#c.light {
-    background-color:#db1d2d;
-}
-#d.light {
-    background-color:#f0421c;
-}
-#e.light {
-    background-color:#fec02d;
-}
-#f.light {
-    background-color:#20d071;
-}
-#g.light {
-    background-color:#1a9ddb;
-}
-#a.light {
-    background-color:#a13fad
-}
-#b.light {
-    background-color:#f26fd4;
-}
-#c2.light {
-    background-color:#db1d2d;
-}
-
-}
-
-
-@media(max-width: 768px){}
-
-
-
-
-
+    
+    .funFacts{
+        border: 1px solid #a13fad;
+        
+    }
+    
+    /* light up styles */
+    #c.light {
+        background-color:#db1d2d;
+    }
+    #d.light {
+        background-color:#f0421c;
+    }
+    #e.light {
+        background-color:#fec02d;
+    }
+    #f.light {
+        background-color:#20d071;
+    }
+    #g.light {
+        background-color:#1a9ddb;
+    }
+    #a.light {
+        background-color:#a13fad
+    }
+    #b.light {
+        background-color:#f26fd4;
+    }
+    #c2.light {
+        background-color:#db1d2d;
+    }
+    
+    }
+    
+    
+    @media(max-width: 768px){}
+    
+    
+    
+    
+    
+    

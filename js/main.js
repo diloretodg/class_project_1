@@ -1,4 +1,23 @@
-var noteIntervals = [];
+// Initialize Firebase
+var config = {
+apiKey: "AIzaSyChswfB5HAG1cQcjkai_26cvtFHtYqpNYU",
+authDomain: "project1-a46e9.firebaseapp.com",
+databaseURL: "https://project1-a46e9.firebaseio.com",
+projectId: "project1-a46e9",
+storageBucket: "project1-a46e9.appspot.com",
+messagingSenderId: "1004479758001"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+// Clear username
+var username = "";
+    
+var noteIntervals = []};
+var songBank = {
+    test: ["c3Audio", "d3Audio", "e3Audio", "f3Audio", "g3Audio", "a3Audio", "b3Audio", "c4Audio"]
+}
 // test song function
 var currentNote;
 // relevant game val all initialized
@@ -14,6 +33,36 @@ var game = {
     score: 0, 
     simonSong: null
   };
+
+ //on Click button for adding username
+ $("#add-user").on("click", function(event) {
+    event.preventDefault();
+
+    // Clears user input textbox
+    // $("#user-input").val("");
+
+    // Get username input
+    username = $("#user-input").val().trim();
+    score = $("#userscore").val().trim();
+    leader = $("#leader").val().trim();
+
+    // Save changes to Firebase
+    database.ref().set({
+        username: username,
+        score: score,
+        leader: leader
+    });
+
+    // Create Firebase event for adding username to the database 
+    database.ref().on("value", function(snapshot) {
+        console.log(snapshot.val());
+
+        // Store snapshot into a variable
+        console.log(username);
+
+        // Append the new row to the table
+        $("#username").text(snapshot.val().username);
+    });
 // event listener for game start
 $("#reset").on("click", function(){
     newGame();
@@ -23,6 +72,13 @@ $("#reset").on("click", function(){
 $(".music-note").on("click", function(){
 // sets var used in function parameters
     var note = $(this).attr("data-note");
+
+    // Play note and console.log
+    play(note);
+    console.log("playing "+ note);  
+    
+    // Push note pattern to noteIntervals
+    noteIntervals.push(note);
 // only calls if the turn is passed to the user
     if (game.yourTurn == true){
         playerTurn(note);
