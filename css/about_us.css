@@ -1,10 +1,52 @@
 *{
     color: white;
+    font-family: 'Rajdhani', sans-serif;
 }
 .aboutImg {
     width: 300px;
     height: 300px;
 }
+.containerH {
+    color:#20d071;
+    font-family: 'Rajdhani', sans-serif;
+}
+p {
+    color:white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size:16px;
+}
+h3{
+    font-size:20px;
+}
 hr {
     color:white;
+}
+td, .fonts{
+    font-family: 'Rajdhani', sans-serif;
+    color:#20d071;
+}
+th {
+    font-family: 'Rajdhani', sans-serif;
+    font-size:20px;
+    color:#20d071;
+}
+
+/* colors for the checks */
+.iconCheckColor1{
+    color:#f26fd4;
+}
+.iconCheckColor2{
+    color:#20d071;
+}
+.iconCheckColor3{
+    color:#1a9ddb;
+}
+.iconCheckColor4{
+    color:#fec02d;
+}
+
+
+/* color for the folder icon */
+.iconFolderColor{
+    color:#f0421c;
 }
