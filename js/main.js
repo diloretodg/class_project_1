@@ -119,3 +119,8 @@ function play(n) {
     // console.log("playing "+ n + " audio file");
     // console.log(audio);
 }; 
+
+// this is for about us page Card hovor:
+$('.special.cards .image').dimmer({
+    on: 'hover'
+  });
