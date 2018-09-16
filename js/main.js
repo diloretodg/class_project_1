@@ -15,7 +15,7 @@ var game = {
     simonSong: null
   };
 // event listener for game start
-$("#reset").on("click", function(){
+$("#startgame").on("click", function(){
     newGame();
     // console.log("game start");
 });
