@@ -31,6 +31,22 @@ $(".music-note").on("click", function(){
 });  
 // starts fresh simon game
 function newGame() {
+
+    // Create Firebase event for adding username to the database 
+    database.ref().on("value", function(snapshot) {
+        console.log(snapshot.val());
+         // Store snapshot into a variable
+        console.log(username);
+        console.log(game.score);
+         // Append the new row to the table
+        $("#username").text(snapshot.val().username);
+        $("#userScore").text(snapshot.val().game.score);
+
+        // Create the new row tag with td tags to append each username and high score
+        $("<tr>").append(snapshot.val().username);
+        $("<td>").append(snapshot.val().game.score);
+    });
+
 // clears out entire sequence in case of multiple starts
     clearTimeout(game.simonSong);
     game = {

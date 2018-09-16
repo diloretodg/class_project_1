@@ -24,10 +24,15 @@ $("#add-user").on("click", function(event) {
     // Get username input
     username = $("#nameInput").val().trim();
     console.log($("#nameInput").val().trim());
+    console.log(userScore);
     // Save changes to Firebase
     database.ref().set({
-        username: username
+        username: username,
+        userScore: userScore
     });
+
+    // Clear input box
+    $("#nameInput").val("");
     // Create Firebase event for adding username to the database 
     database.ref().on("value", function(snapshot) {
         console.log(snapshot.val());
@@ -35,6 +40,7 @@ $("#add-user").on("click", function(event) {
         console.log(username);
          // Append the new row to the table
         $("#username").text(snapshot.val().username);
+        $("#userScore").text(snapshot.val().userScore);
     });
 });
 
