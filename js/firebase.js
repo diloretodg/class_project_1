@@ -15,6 +15,7 @@ var database = firebase.database();
 // ============== Add Username to Game Info column ====================
 // Clear username
 var username = "";
+var userScore = 0;
 
  //on Click button for adding username
 $("#add-user").on("click", function(event) {
@@ -45,16 +46,14 @@ $(document).on("click", ".submit", function(event){
     //creating vars for id's should be placed in index.html
     //for the form inputs to be captured for firebase
     var name = $("#nameInput").val().trim();
-    var nickName = $("#nickNameInput").val().trim();
-    // var score = $("#scoreTracker").val();
+    var score = $("#userScore").val();
     
     //user input for firebase imagine breakdown will be:
         // - user name and nickname will be input on index.html
         // - score will be calculated possibly with a function on either time lasted or songs correctly completed.
     var newPlayer ={
         userName: name,
-        userNickName: nickName,
-        // userScore: score          NOT PUSHING SCORE YET, need to figure out how to do this.
+        userScore: score         
     };
     //pushing into firebase 
     database.ref().push(newPlayer)

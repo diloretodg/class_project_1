@@ -81,8 +81,9 @@ nav.ui.inverted.menu{
     height: 100%;
     background: linear-gradient(-80deg, rgba(6, 11, 46, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(6, 11, 46, 0.3) 90%);
     color: rgb(161, 63, 173);
-    padding: auto 5px auto 5px;
+    padding: 40px 5px 0px 5px;
 }
+
 #username, #userScore, #leader, #topUser {
     color: white;
 }
@@ -258,6 +259,7 @@ h4.nameTune {
     height: 75px;
     transform:rotate(45deg);
     color: white;
+    align-content: center;
 
 }
 
