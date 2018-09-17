@@ -12,7 +12,7 @@ body {
         background-image: url("../media/images/newBackground.png");
         background-size: cover;
         margin: 0 auto;
-        min-width: 450px;
+        min-width: 426px;
     
     }
 
@@ -70,6 +70,10 @@ i.sign.in.icon{
     
 }
 
+.toggle{
+    display: none;
+}
+
 nav.ui.inverted.menu{
     position: relative;
     top: -10px;
@@ -115,6 +119,10 @@ margin-bottom: 40px;
     display: none;
 }
 
+
+.menuBreak{
+    display:none;
+}
 /*This is the style that give our music boxes shape*/
 
 .box {
@@ -349,6 +357,49 @@ margin-bottom: 40px;
 }
 
 
+@media screen and (max-width: 500px){
+    .insResize{
+        display: block;
+    
+    }
+
+    .toggle{
+        display:block;
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        font-size: 30px;
+    }
+
+
+    
+    .align.justify.icon{
+        color: #f26fd4;
+        text-align: right;
+    }
+    ul{
+        padding:0;
+        margin:0;
+        width:100%;
+    }
+    ul, li.button.fluid{
+        width: 100%;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    li{
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    nav h3{
+        width: 100%;
+    }
+
+    
+
+}
 
 
 
