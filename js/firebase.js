@@ -1,16 +1,43 @@
 // ===============initial firebase==============================================================================
 // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyChswfB5HAG1cQcjkai_26cvtFHtYqpNYU",
-    authDomain: "project1-a46e9.firebaseapp.com",
-    databaseURL: "https://project1-a46e9.firebaseio.com",
-    projectId: "project1-a46e9",
-    storageBucket: "project1-a46e9.appspot.com",
-    messagingSenderId: "1004479758001"
-  };
-  firebase.initializeApp(config);
+var config = {
+apiKey: "AIzaSyChswfB5HAG1cQcjkai_26cvtFHtYqpNYU",
+authDomain: "project1-a46e9.firebaseapp.com",
+databaseURL: "https://project1-a46e9.firebaseio.com",
+projectId: "project1-a46e9",
+storageBucket: "project1-a46e9.appspot.com",
+messagingSenderId: "1004479758001"
+};
+firebase.initializeApp(config);
 
-  var database = firebase.database();
+var database = firebase.database();
+
+// ============== Add Username to Game Info column ====================
+// Clear username
+var username = "";
+var userScore = 0;
+
+ //on Click button for adding username
+$("#add-user").on("click", function(event) {
+    event.preventDefault();
+     
+    // Get username input
+    username = $("#nameInput").val().trim();
+    console.log($("#nameInput").val().trim());
+    // Save changes to Firebase
+    database.ref().set({
+        username: username
+    });
+    // Create Firebase event for adding username to the database 
+    database.ref().on("value", function(snapshot) {
+        console.log(snapshot.val());
+         // Store snapshot into a variable
+        console.log(username);
+         // Append the new row to the table
+        $("#username").text(snapshot.val().username);
+    });
+});
+
 
   // ===========start file relating to database here ==============================================================
 //this is the fuction for the form for the name and acct to be imported
@@ -19,16 +46,14 @@ $(document).on("click", ".submit", function(event){
     //creating vars for id's should be placed in index.html
     //for the form inputs to be captured for firebase
     var name = $("#nameInput").val().trim();
-    var nickName = $("#nickNameInput").val().trim();
-    // var score = $("#scoreTracker").val();
+    var score = $("#userScore").val();
     
     //user input for firebase imagine breakdown will be:
         // - user name and nickname will be input on index.html
         // - score will be calculated possibly with a function on either time lasted or songs correctly completed.
     var newPlayer ={
         userName: name,
-        userNickName: nickName,
-        // userScore: score          NOT PUSHING SCORE YET, need to figure out how to do this.
+        userScore: score         
     };
     //pushing into firebase 
     database.ref().push(newPlayer)
@@ -62,7 +87,7 @@ function limitingRows(){
     var rowsInTable = table.rows.length; 
     //trying to creat an if statement that that says once max is met stop inputing data
     if (rowsInTable > maxRows) {
-        for (var i =0; i<maxRows; i++) {
+        for (var i =1; i<maxRows; i++) {
 
         }
     }
