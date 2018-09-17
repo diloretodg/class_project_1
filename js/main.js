@@ -44,7 +44,7 @@ function newGame() {
 
         // Create the new row tag with td tags to append each username and high score
         $("<tr>").append(snapshot.val().username);
-        $("<td>").append(snapshot.val().game.score);
+        $("<td>").append(snapshot.val().game.score);    
     });
 
 // clears out entire sequence in case of multiple starts
