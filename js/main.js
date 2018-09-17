@@ -62,6 +62,7 @@ function playerTurn(n) {
             simonSays(game.currentSong);
         } else {
             game.sequence ++;
+            game.score = game.score + 100;  
             game.yourTurn = true;
             // add score and append to score div
             game.score = game.score +100;
