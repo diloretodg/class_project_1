@@ -1,3 +1,17 @@
 *{
     color: white;
 }
+h1 {
+    color: #20d071;
+}
+#button{
+    color:#20d071 !important;
+    border: #20d071 !important;
+}
+#button:hover{
+    color:#f26fd4 !important;
+}
+
+strong, h3 {
+    color:#f26fd4;
+}
