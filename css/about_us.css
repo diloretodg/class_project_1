@@ -18,7 +18,7 @@ h3{
 hr {
     color:white;
 }
-td, .fonts{
+td, .fonts, span, {
     font-family: 'Rajdhani', sans-serif;
     color:#20d071;
 }
@@ -47,3 +47,11 @@ th {
 .iconFolderColor{
     color:#f0421c;
 }
+
+.cardP {
+   color: #20d071;
+}
+
+@media screen and (min-width: 333px) and (max-width: 1024px) {
+    #hide_table { display: none; }   /* hide it elsewhere */
+  }

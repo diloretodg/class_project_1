@@ -49,16 +49,18 @@
 
 <body>
    
-    <nav class="ui inverted menu">
+  <nav class="ui inverted menu">
         <h3 class="header item">Meistro Music Box</h3>
         <a href= "index.html" class="item">Home</a>
         <a href="leaders.html" class="item">Leaders</a>
         <a href= "about_us.html" class="item">About</a>
         <a href= "donation.html" class="item">Donate</a>
-    </nav>
-      <div class="ui equal width grid stackable">
+  </nav>
+    
+  <div class="ui equal width grid stackable">
             <div class="column">
                 <div class=" funFacts ui segment">
+
                       <div class="ui center aligned compact segment">
                           <div class="ui left icon action input">
                               <i class="sign in icon"></i>
@@ -122,6 +124,31 @@
                       
                       <!-- Top Score -->
                       <h2>Top Score:  <span style="display: inline" id="topScore"></span></h2>
+
+                    <form class="ui form">
+                        <div class="field">
+                            <label><h4>Full Name</h4></label>
+                            <!-- added id for name input -->
+                            <input type="text" name="name" id="nameInput" placeholder="ex:Toby Mcquire">
+                        </div>
+                        <div class="field">
+                            <label><h4>NickName: (3 characters)</h4></label>
+                            <!-- added id for nickname input -->
+                            <input type="text" name="nickname" id="nickNameInput" placeholder="ex: TOM">
+                        </div>
+                        <button class="ui button submit" type="submit">Submit</button>
+                      </form>
+                       
+                    </div>            
+            </div>
+
+            <div class="six wide column">
+                <div class=" musicVideo ui segment">
+                    <iframe width="400" height="200"src="https://www.youtube.com/embed/dASqLXiuomY?rel=0&amp;controls=0&amp;showinfo=0&amp;start=1200"frameborder="0"allow="autoplay; encrypted-media"allowfullscreen></iframe>
+                </div>
+                </div>
+            <div class="column">
+                    <div class=" anyInfo ui segment">
                     </div>
 
               </div>
@@ -144,6 +171,7 @@
 
             <!-- =========== New Game Box ============== -->
             <div class="row"></div>
+
             <div class="two wide column">
               <div class="reset-holder ui segment">
                 <div id="reset">New Game</div>
@@ -151,6 +179,17 @@
             </div>
             <div class=" ten wide centered column">
               <div class="ui segment" id="instrument">
+
+
+            <div class="ui row centered"> 
+                <button class="ui compact labeled icon button" id="startgame">
+                    <i class="play circle icon"></i>
+                    Start Game
+                  </button>
+             </div> 
+
+            <div class="ui row centered">
+              <div id="instrument">
                 <a id="c" class="box music-note" data-note="c3Audio"></a>
                 <a id="d" class="box music-note" data-note="d3Audio"></a>
                 <a id="e" class="box music-note" data-note="e3Audio"></a>
@@ -161,10 +200,7 @@
                 <a id="c" class="box music-note" data-note="c4Audio"></a>
             </div>
           </div>
-      </div>
-</div>
-
-</div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
   <script src="js/song-bank.js"></script>
