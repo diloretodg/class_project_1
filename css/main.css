@@ -1,3 +1,5 @@
+
+
 * {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -10,7 +12,8 @@ body {
         background-image: url("../media/images/newBackground.png");
         background-size: cover;
         margin: 0 auto;
-        min-width: 413px;
+        min-width: 450px;
+    
     }
 
 
@@ -34,6 +37,10 @@ justify-content: center;
     background: linear-gradient(-80deg, rgba(6, 11, 46, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(6, 11, 46, 0.3) 90%);
  
     
+}
+
+field{
+    color:rgb(161, 63, 173);
 }
 
 .ui.compact.segment{
@@ -64,6 +71,8 @@ i.sign.in.icon{
 }
 
 nav.ui.inverted.menu{
+    position: relative;
+    top: -10px;
     background: linear-gradient(180deg, rgba(24, 15, 156, 0.3) 0%,rgba(0, 0, 0, 0.4) 70%, rgba(78, 39, 83, 0.3));
     border-bottom: 1px solid rgba(161, 63, 173, 0.2);
 }
@@ -97,7 +106,13 @@ nav.ui.inverted.menu{
 #instrument {
 height: 100%;
 padding: 20px;
+margin-top: 40px;
+margin-bottom: 40px;
 
+}
+
+.insResize{
+    display: none;
 }
 
 /*This is the style that give our music boxes shape*/
@@ -324,6 +339,15 @@ padding: 20px;
 #c2.light {
     background-color:#db1d2d;
 }
+
+@media screen and (max-width: 725px){
+    .insResize{
+        display: block;
+    
+    }
+
+}
+
 
 
 
