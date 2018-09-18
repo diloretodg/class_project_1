@@ -26,7 +26,8 @@ $("#add-user").on("click", function(event) {
     console.log($("#nameInput").val().trim());
     // Save changes to Firebase
     database.ref().set({
-        username: username
+        username: username,
+        userScore: userScore
     });
     // Create Firebase event for adding username to the database 
     database.ref().on("value", function(snapshot) {
@@ -35,6 +36,7 @@ $("#add-user").on("click", function(event) {
         console.log(username);
          // Append the new row to the table
         $("#username").text(snapshot.val().username);
+        $("#userScore").text(snapshot.val().userScore);
     });
 });
 
