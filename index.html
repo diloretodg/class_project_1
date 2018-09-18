@@ -130,6 +130,21 @@
 
             <div class="ui row centered">
               <div id="instrument">
+<!-----------------------------pop up form for naming the song bonus----------------------------------->
+  <div class="songGuess">
+    <h1>Bonus</h1>
+    <p>would You Like To Try Guessing The Song For 300 Points?</p>
+   <form><input id="yes" name="songInput" type=radio value="yes">Yes
+    <input id="no" name="songInput" type="radio" value="no">No
+    <button id="songButton" type="submit">Submit</button>
+   </form>
+  </div>
+  <form id="answer-input">
+      <label for="answerSong">Answer</label>
+      <input id="answerSong" type="text">
+      <button id="answerButton" type="submit">Submit</button>
+  </form>
+<!---------------------------------------------------------------------------------------------------------->
                 <a id="c" class="box music-note" data-note="c3Audio"></a>
                 <a id="d" class="box music-note" data-note="d3Audio"></a>
                 <a id="e" class="box music-note" data-note="e3Audio"></a>
