@@ -83,9 +83,30 @@ function(errorObject) {
 
 });
 
-//==========NEED HELP HERE==================================================
 
+
+// =========in ref line 23 ordering by child for score input=========================================
+//see https://firebase.google.com/docs/database/web/lists-of-data for sort date info
+
+    // var playerId = firebase.auth().currentUser.uid;
+    // var topScoreRef = firebase.database().ref('newPlayer/' + playerId).orderByChild('score');
+
+//========end of ordering by child for score input ====================================
+
+
+
+
+
+//==========NEED HELP HERE==================================================
 // table function for leaderboard 
+//https://firebase.google.com/docs/database/web/lists-of-data look under sort data, filter data: limitToFirst() or equalTo() methods
+//attempt to use firebase to limit results to top 10:
+
+// var topTen = //??????
+// newPlayer = firebase.database().ref("score").orderbyValue(topTen) //not sure what to set equalTo() or orderbyValue() to. 
+
+
+//attempt using JS ONLY not using firebase to limit results:
 function limitingRows(){
     var maxRows= 11 //counting the header as 1 row to ensure we do not have 9 player data's displayed
     var table = $("#leaderBoard") //made a leaderboard id for tbody
@@ -98,7 +119,6 @@ function limitingRows(){
     }
 }
 //limitingRows();
-
 //=======end of limiting rows function ========================================
 
 
