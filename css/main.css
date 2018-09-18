@@ -1,5 +1,3 @@
-
-
 * {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -12,8 +10,7 @@ body {
         background-image: url("../media/images/newBackground.png");
         background-size: cover;
         margin: 0 auto;
-        min-width: 426px;
-    
+        min-width: 413px;
     }
 
 
@@ -37,10 +34,6 @@ justify-content: center;
     background: linear-gradient(-80deg, rgba(6, 11, 46, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(6, 11, 46, 0.3) 90%);
  
     
-}
-
-field{
-    color:rgb(161, 63, 173);
 }
 
 .ui.compact.segment{
@@ -70,13 +63,7 @@ i.sign.in.icon{
     
 }
 
-.toggle{
-    display: none;
-}
-
 nav.ui.inverted.menu{
-    position: relative;
-    top: -10px;
     background: linear-gradient(180deg, rgba(24, 15, 156, 0.3) 0%,rgba(0, 0, 0, 0.4) 70%, rgba(78, 39, 83, 0.3));
     border-bottom: 1px solid rgba(161, 63, 173, 0.2);
 }
@@ -95,7 +82,6 @@ nav.ui.inverted.menu{
 
 }
 
-/* Game Info Styling */
 .anyInfo.ui.segment{
     display: block;
     justify-content: left;
@@ -106,40 +92,25 @@ nav.ui.inverted.menu{
     padding: auto 5px auto 5px;
  }
 
+
 #username, #userScore, #leader, #topUser {
     color: white;
 }
 
 h4.nameTune {
     display: inline;
-    color: white;
-    padding: opx auto 0px auto;
-}
 
-#tuneInput, # {
     color: white;
-    text-align: center;
-    align-content: center;
-}
+ }
 
 /*This is the style for our boxs' container. With it we can position and center the boxes in the browser.*/
 
 #instrument {
 height: 100%;
 padding: 20px;
-margin-top: 40px;
-margin-bottom: 40px;
 
 }
 
-.insResize{
-    display: none;
-}
-
-
-.menuBreak{
-    display:none;
-}
 /*This is the style that give our music boxes shape*/
 
 .box {
@@ -287,8 +258,6 @@ margin-bottom: 40px;
     width: 75px;
     height: 75px;
     transform:rotate(45deg);
-    color: white;
-    align-content: center;
 
 }
 
@@ -367,60 +336,20 @@ margin-bottom: 40px;
     background-color:#db1d2d;
 }
 
-@media screen and (max-width: 725px){
-    .insResize{
-        display: block;
-    
-    }
-
-}
-
-
-@media screen and (max-width: 500px){
-    .insResize{
-        display: block;
-    
-    }
-
-    .toggle{
-        display:block;
-        width: 100%;
-        padding: 10px 20px;
-        box-sizing: border-box;
-        font-size: 30px;
-    }
-
-
-    
-    .align.justify.icon{
-        color: #f26fd4;
-        text-align: right;
-    }
-    ul{
-        padding:0;
-        margin:0;
-        width:100%;
-    }
-    ul, li.button.fluid{
-        width: 100%;
-        text-decoration: none;
-        text-align: center;
-    }
-
-    li{
-        padding: 10px;
-        font-size: 16px;
-    }
-
-    nav h3{
-        width: 100%;
-    }
-
-    
-
-}
 
 
 
 
 
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
