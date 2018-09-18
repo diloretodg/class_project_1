@@ -12,12 +12,11 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// ============== Add Username to Game Info column ====================
-// Clear username
-
+// ============== (SET FUNCTION) Add Username to Game Info column ====================
+// Clear
 var userScore = 0;
+var username = "";
 
- //on Click button for adding username
 $("#add-user").on("click", function(event) {
     event.preventDefault();
      
@@ -29,6 +28,7 @@ $("#add-user").on("click", function(event) {
     database.ref().set({
         username: username,
         userScore: userScore
+        /* might need a .push for lbscore to be captured */
     });
     // Create Firebase event for adding username to the database 
     database.ref().on("value", function(snapshot) {
@@ -41,41 +41,31 @@ $("#add-user").on("click", function(event) {
     });
 });
 
-
-  // ===========start file relating to database here ==============================================================
-//this is the fuction for the form for the name and acct to be imported
+// ===========(PUSH FUNCTION) LB data recordation  =======================================
 $(document).on("click", ".submit", function(event){
     event.preventDefault();
-    //creating vars for id's should be placed in index.html
-    //for the form inputs to be captured for firebase
-    var name = $("#nameInput").val().trim();
-    var nickName = $("#nickNameInput").val().trim();
-    var score = $("#userScore").val();
-    
-    //user input for firebase imagine breakdown will be:
-        // - user name and nickname will be input on index.html
-        // - score will be calculated possibly with a function on either time lasted or songs correctly completed.
-    var newPlayer ={
-        userName: name,
-        userNickName: nickName,
-        userScore: score         
+    //creating LeaderBoard
+    var LBName = $("#nameInputLB").val();
+    var LBScore = $("#userScoreLB").val();
+    // capturing leaderboard data for top scores
+    var LBPlayer ={
+        LBName: LBName,
+        LBScore: LBScore      
     };
     //pushing into firebase 
-    database.ref().push(newPlayer)
-    console.log(newPlayer);
+    database.ref().push(LBPlayer)
+    console.log(LBPlayer);
 });
 //database child_added for the inputed info from the new colaborator
 database.ref().on("child_added", function(childSnapshot){
     console.log(childSnapshot.val());
-    console.log(childSnapshot.val().userName); 
-    console.log(childSnapshot.val().userNickName);
-    // console.log(childSnapshot.val().userScore);
+    console.log( "lb name " + childSnapshot.val().LBName); 
+    console.log("lb score " + childSnapshot.val().LBScore);
    
     // publishing data to the table
-    $(".previousPlayerName").append("<tr><td><h4 class='ui image header'><img src='https://cdn4.vectorstock.com/i/1000x1000/14/58/pixel-avatar-male-cartoon-retro-game-style-vector-17311458.jpg' class='ui mini rounded image'>" + "<h6>" + childSnapshot.val().userName + "</h6>" + "</td></tr>");
-    $(".previousPlayerNickName").append( " <td> " + childSnapshot.val().userNickName + "</td>");
+    $(".LBName").append("<tr><td><h4 class='ui image header'><img src='https://cdn4.vectorstock.com/i/1000x1000/14/58/pixel-avatar-male-cartoon-retro-game-style-vector-17311458.jpg' class='ui mini rounded image'>" + "<h6>" + childSnapshot.val().LBName + "</h6>" + "</td></tr>");
     //this should be in line with the userName data :
-            //$(".decendingScores").append("Score: " + childSnapshot.val().userScore);    
+    $(".decendingScores").append("Score: " + childSnapshot.val().LBScore);    
 },
 //added errorObject function just in case something goes wonky
 function(errorObject) {
