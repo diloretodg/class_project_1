@@ -7,6 +7,7 @@
 
 body {
     background-color: black;
+    font-family: 'Lato', sans-serif;
         background-image: url("../media/images/newBackground.png");
         background-size: cover;
         margin: 0 auto;
@@ -63,9 +64,20 @@ i.sign.in.icon{
     
 }
 
+.toggle{
+    display: none;
+}
+
 nav.ui.inverted.menu{
+    position: relative;
     background: linear-gradient(180deg, rgba(24, 15, 156, 0.3) 0%,rgba(0, 0, 0, 0.4) 70%, rgba(78, 39, 83, 0.3));
     border-bottom: 1px solid rgba(161, 63, 173, 0.2);
+    top: -11px;
+}
+
+.align.justify.icon{
+    display: none;
+
 }
 
 .ui.labeled.icon.button{
@@ -108,7 +120,13 @@ h4.nameTune {
 #instrument {
 height: 100%;
 padding: 20px;
+margin-top: 30px;
+margin-bottom: 40px;
 
+}
+
+.insResize{
+    display: none;
 }
 
 /*This is the style that give our music boxes shape*/
@@ -119,14 +137,6 @@ padding: 20px;
     float:left;
     transform:rotate(45deg);
     
-}
-
-.inside{
-    position: absolute;
-    transform: rotate(-45deg);
-    text-align: center;
-    top: 20px;
-    padding-left: 10px;
 }
 
 
@@ -336,11 +346,65 @@ padding: 20px;
     background-color:#db1d2d;
 }
 
+@media screen and (max-width: 725px){
+    .insResize{
+        display: block;
+    
+    }
+
+}
+
+
+@media screen and (max-width: 500px){
+    .insResize{
+        display: block;
+    
+    }
+
+    .toggle{
+        display:block;
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        font-size: 30px;
+    }
+
+
+    
+    .align.justify.icon{
+        display: block;
+        color: #f26fd4;
+        margin-left: 20px;
+
+    }
+    ul{
+        padding:0;
+        margin:0;
+        width:100%;
+    }
+    ul, li.button.fluid{
+        width: 100%;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    li{
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    nav h3{
+        width: 100%;
+    }
+
+    
+
+}
 
 
 
 
-
+/*
 © 2018 GitHub, Inc.
 Terms
 Privacy
@@ -353,3 +417,4 @@ API
 Training
 Blog
 About
+*/
