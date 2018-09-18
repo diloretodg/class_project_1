@@ -42,7 +42,7 @@
     <source src="media/notes_mp3/c4_note.mp3" type="audio/mp3">
   </audio>
 
-
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="css/main.css"  rel="stylesheet" type="text/css"/>
   
 </head>
@@ -50,12 +50,23 @@
 <body>
    
   <nav class="ui inverted menu">
-        <h3 class="header item">Meistro Music Box</h3>
+        <h3 class="header item">Meistro Music Box
+         <span> <i class="align justify icon" id="collapse"></i></span>
+        </h3>
         <a href= "index.html" class="item">Home</a>
         <a href="leaders.html" class="item">Leaders</a>
         <a href= "about_us.html" class="item">About</a>
         <a href= "donation.html" class="item">Donate</a>
   </nav>
+
+  <div class="toggle"> 
+    <ul>
+      <li><button class="ui button fluid"><a href= "index.html" class="item">Home</a></button></li>
+      <li><button class="ui button fluid"><a href="leaders.html" class="item">Leaders</a></button></li>
+      <li><button class="ui button fluid"><a href= "about_us.html" class="item">About</a></button></li>
+      <li><button class="ui button fluid"><a href= "donation.html" class="item">Donate</a></button></li>
+    </ul>
+  </div>
     
   <div class="ui equal width grid stackable">
             <div class="column">
@@ -88,18 +99,18 @@
         <div class=" anyInfo ui segment">
             <!-- Username - Take user input -->
               <div class="row username">
-                    <h2>Username:  <span style="display: inline" id="username"></span></h2>
+                    <h3>Username:  <span style="display: inline" id="username"></span></h3>
               </div>
     <br>
               <!-- Score Tracker -->
             <div class="row userScore">
-                  <h2>Score:  <span style="display: inline" id="userScore"></span></h2>
+                  <h3>Score:  <span style="display: inline" id="userScore"></span></h3>
             </div>
     <br>
               <!-- Leader and Top Score -->
             <div class="row topUser">
               <!-- Leader Name -->
-              <h2>Leader:  <span style="display: inline" id="leader"></span></h2>
+              <h3>Leader:  <span style="display: inline" id="leader"></span></h3>
 
               <!-- Top Score -->
               <h2>Top Score:  <span style="display: inline" id="topScore"></span></h2>
@@ -123,6 +134,7 @@
                 <a id="d" class="box music-note" data-note="d3Audio"></a>
                 <a id="e" class="box music-note" data-note="e3Audio"></a>
                 <a id="f" class="box music-note" data-note="f3Audio"></a>
+                <br class="insResize"/>
                 <a id="g" class="box music-note" data-note="g3Audio"></a>
                 <a id="a" class="box music-note" data-note="a3Audio"></a>
                 <a id="b" class="box music-note" data-note="b3Audio"></a>
@@ -132,10 +144,13 @@
   </div>
 <!-- =====END OF NOTES BUTTONS=============================================== -->
   </div>
-<br><br>
+<footer>
+
+</footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
   <script src="js/song-bank.js"></script>
   <script src="js/main.js"></script>
   <script src="js/firebase.js"></script>
+  <script src="js/responsive.js"></script>
 </body>
 </html>
