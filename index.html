@@ -48,7 +48,7 @@
 </head>
 
 <body>
-
+   
   <nav class="ui inverted menu">
         <h3 class="header item">Meistro Music Box</h3>
         <a href= "index.html" class="item">Home</a>
@@ -56,163 +56,83 @@
         <a href= "about_us.html" class="item">About</a>
         <a href= "donation.html" class="item">Donate</a>
   </nav>
-
-  <div class="toggle">
-      <i class="align justify icon" id="collapse"></i>
-      <ul>
-        <li><button class="ui button fluid"><a href= "index.html" class="item">Home</a></button></li>
-        <li><button class="ui button fluid"><a href="leaders.html" class="item">Leaders</a></button></li>
-        <li><button class="ui button fluid"><a href= "about_us.html" class="item">About</a></button></li>
-        <li><button class="ui button fluid"><a href= "donation.html" class="item">Donate</a></button></li>
-      </ul>
-    </div>
     
   <div class="ui equal width grid stackable">
-            <div class="column">
-                <div class=" funFacts ui segment">
+<!--  ==========top column chris has MQ for colapse to mobile ============================================-->
+    <div class="column">
+<!-- ============LEFT SEGMENT ===================================  -->
+<div class=" funFacts ui segment">
+    <form class="ui form">
+        <div class="field">
+            <label><h4>Full Name</h4></label>
+            <!-- added id for name input -->
+            <input type="text" name="name" id="nameInput" placeholder="ex:Toby Mcquire">
+        </div>
+        <button class="ui button submit" id="add-user" type="submit">Submit</button>
+      </form>
+</div>
+</div>
+<!-- ========END OF LEFT SEGMENT ================================= -->
 
-                      <div class="ui center aligned compact segment">
-                          <div class="ui left icon action input">
-                              <i class="sign in icon"></i>
-                              <input type="text" placeholder="Ron Jeremy">
-                              <div class="ui submit button">Sign In</div>
-                          </div>
-                          <div class="ui horizontal divider">
-                                Or
-                          </div>
-                          <div class="ui labeled icon button">
-                                Create New Account
-                                <i class="user icon"></i>
-                          </div>
-<!-- ======================form for data that will show up on leaderboard ==============-->
-                          <form class="ui form">
-                            <div class="field">
-                                <label><h4>Full Name</h4></label>
-                                <!-- added id for name input -->
-                                <input type="text" name="name" id="nameInput" placeholder="ex:Toby Mcquire">
-                            </div>
-                            <button class="ui button submit" id="add-user" type="submit">Submit</button>
-                          </form>
-<!--================= end of player name form ======================================= -->
-                        </div>
-                      </div>
-                    </div>
-                    <div class="six wide column">
-                      <div class=" musicVideo ui segment">
-                          <iframe width="400" height="200"src="https://www.youtube.com/embed/dASqLXiuomY?rel=0&amp;controls=0&amp;showinfo=0&amp;start=1200"frameborder="0"allow="autoplay; encrypted-media"allowfullscreen></iframe>
-                      </div>
-                      <!-- ====== start game button ======= -->
-                      <div class="row"> 
-                        <button class="ui compact labeled icon button" id="startgame">
-                          <i class="play circle icon"></i>
-                          Start Game
-                        </button>
-                      </div> 
-                    </div>
-                    <!-- ======end of start button==== -->
-                        
-                    <!-- ====== User and Game Info Column ====== -->
-                    <div class="column">
-                      <div class=" anyInfo ui segment">
+<!-- ========MIDDLE SEGMENT WITH YOUTUBE  ========================-->
+<div class="six wide column">
+    <div class=" musicVideo ui segment">
+        <iframe width="400" height="200"src="https://www.youtube.com/embed/dASqLXiuomY?rel=0&amp;controls=0&amp;showinfo=0&amp;start=1200"frameborder="0"allow="autoplay; encrypted-media"allowfullscreen></iframe>
+    </div>
+</div>
+<!-- =======END OF MIDDLE SEGMENT================================= -->
 
-                        <!-- Username - Take user input -->
-                        <div class="row username">
-                          <h2>Username:  <span style="display: inline" id="username"></span></h2>
-                        </div>
-                        <br>
-
-                    <!-- Score Tracker -->
-                    <div class="row userScore">
-                      <h2>Score:  <span style="display: inline" id="userScore"></span></h2>
-                    </div>
-                    <br>
-
-                    <!-- Leader and Top Score --> 
-                    <div class="row topUser">
-                      <!-- Leader Name -->
-                      <h2>Leader:  <span style="display: inline" id="leader"></span></h2>
-                      
-                      <!-- Top Score -->
-                      <h2>Top Score:  <span style="display: inline" id="topScore"></span></h2>
-
-                    <form class="ui form">
-                        <div class="field">
-                            <label><h4>Full Name</h4></label>
-                            <!-- added id for name input -->
-                            <input type="text" name="name" id="nameInput" placeholder="ex:Toby Mcquire">
-                        </div>
-                        <div class="field">
-                            <label><h4>NickName: (3 characters)</h4></label>
-                            <!-- added id for nickname input -->
-                            <input type="text" name="nickname" id="nickNameInput" placeholder="ex: TOM">
-                        </div>
-                        <button class="ui button submit" type="submit">Submit</button>
-                      </form>
-                       
-                    </div>            
-            </div>
-
-            <div class="six wide column">
-                <div class=" musicVideo ui segment">
-                    <iframe width="400" height="200"src="https://www.youtube.com/embed/dASqLXiuomY?rel=0&amp;controls=0&amp;showinfo=0&amp;start=1200"frameborder="0"allow="autoplay; encrypted-media"allowfullscreen></iframe>
-                </div>
-                </div>
-            <div class="column">
-                    <div class=" anyInfo ui segment">
-                    </div>
-
-              </div>
-            </div>
-            <!-- ====== End of Game Info Column ====== -->
-
-            <!-- ====================== Name That Tune Input Box ==============-->
-            <div class="row" style="display: inline; ">
-              <div class="ui form">
-                  <div class="required eight wide field">
-                      <label><h4 class="nameTune">Can You Name That Tune?</h4></label>
-                      <div class="ui action input">
-                        <input type="text" placehold="Ex: Billie Jean">
-                        <div class="ui blue button">Submit</div>
-                      </div>      
-                  </div>  
-              </div>
-            </div>  
-            <!-- ====================== Name That Tune Input Box ==============-->
-
-            <!-- =========== New Game Box ============== -->
-            <div class="row"></div>
-
-            <div class="two wide column">
-              <div class="reset-holder ui segment">
-                <div id="reset">New Game</div>
-              </div>
-            </div>
-            <div class=" ten wide centered column">
-              <div class="ui segment" id="instrument">
+<!--========RIGHT SEGMENT ========================================= -->
+<div class="column">
+  <div class=" anyInfo ui segment">
+      <div class="row topUser">
+    <!-- Username - Take user input -->
+    <div class="row username">
+        <h2>Username:  <span style="display: inline" id="username"></span></h2>
+      </div>
+      <br>
+    <!-- Score Tracker -->
+    <div class="row userScore">
+      <h2>Score:  <span style="display: inline" id="userScore"></span></h2>
+    </div>
+  <!-- Leader Name -->
+    <h2>Leader:  <span style="display: inline" id="leader"></span></h2>
+    
+    <!-- Top Score -->
+    <h2>Top Score:  <span style="display: inline" id="topScore"></span></h2>
+    </div>
 
 
-            <div class="ui row centered"> 
-                <button class="ui compact labeled icon button" id="startgame">
-                    <i class="play circle icon"></i>
-                    Start Game
-                  </button>
-             </div> 
+  </div>            
+</div>
+<!-- =========END OF RIGHT SEGMENT ============================================ -->
 
-            <div class="ui row centered">
-              <div id="instrument">
-                <a id="c" class="box music-note" data-note="c3Audio"></a>
-                <a id="d" class="box music-note" data-note="d3Audio"></a>
-                <a id="e" class="box music-note" data-note="e3Audio"></a>
-                <a id="f" class="box music-note" data-note="f3Audio"></a>
-                <br class="insResize"/>
-                <a id="g" class="box music-note" data-note="g3Audio"></a>
-                <a id="a" class="box music-note" data-note="a3Audio"></a>
-                <a id="b" class="box music-note" data-note="b3Audio"></a>
-                <a id="c" class="box music-note" data-note="c4Audio"></a>
-            </div>
-          </div>
+<!-- =========START GAME ROW=================================================== -->
+<!-- start game button -->
+<div class="ui row centered"> 
+    <button class="ui compact labeled icon button" id="startgame">
+        <i class="play circle icon"></i>
+        Start Game
+      </button>
+</div> 
+<!-- ========END OF START GAME ROW============================================ -->
+
+<!-- ========NOTE BUTTONS=====================================================-->
+<div class="ui row centered">
+  <div id="instrument">
+    <a id="c" class="box music-note" data-note="c3Audio"></a>
+    <a id="d" class="box music-note" data-note="d3Audio"></a>
+    <a id="e" class="box music-note" data-note="e3Audio"></a>
+    <a id="f" class="box music-note" data-note="f3Audio"></a>
+    <a id="g" class="box music-note" data-note="g3Audio"></a>
+    <a id="a" class="box music-note" data-note="a3Audio"></a>
+    <a id="b" class="box music-note" data-note="b3Audio"></a>
+    <a id="c" class="box music-note" data-note="c4Audio"></a>
   </div>
-
+</div>
+<!-- =====END OF NOTES BUTTONS=============================================== -->
+  </div>
+<br><br>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
   <script src="js/song-bank.js"></script>
   <script src="js/main.js"></script>

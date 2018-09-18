@@ -14,7 +14,7 @@ var database = firebase.database();
 
 // ============== Add Username to Game Info column ====================
 // Clear username
-var username = "";
+
 var userScore = 0;
 
  //on Click button for adding username
@@ -25,8 +25,10 @@ $("#add-user").on("click", function(event) {
     username = $("#nameInput").val().trim();
     console.log($("#nameInput").val().trim());
     // Save changes to Firebase
+    // ref set for display on index.html page
     database.ref().set({
-        username: username
+        username: username,
+        userScore: userScore
     });
     // Create Firebase event for adding username to the database 
     database.ref().on("value", function(snapshot) {
@@ -35,6 +37,7 @@ $("#add-user").on("click", function(event) {
         console.log(username);
          // Append the new row to the table
         $("#username").text(snapshot.val().username);
+        $("#userScore").text(snapshot.val().userScore);
     });
 });
 
@@ -46,6 +49,7 @@ $(document).on("click", ".submit", function(event){
     //creating vars for id's should be placed in index.html
     //for the form inputs to be captured for firebase
     var name = $("#nameInput").val().trim();
+    var nickName = $("#nickNameInput").val().trim();
     var score = $("#userScore").val();
     
     //user input for firebase imagine breakdown will be:
@@ -53,6 +57,7 @@ $(document).on("click", ".submit", function(event){
         // - score will be calculated possibly with a function on either time lasted or songs correctly completed.
     var newPlayer ={
         userName: name,
+        userNickName: nickName,
         userScore: score         
     };
     //pushing into firebase 
