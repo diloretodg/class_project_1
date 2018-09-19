@@ -7,7 +7,11 @@ $(document).ready(function(){
    
 
     $("#collapse").on("click", function(){
-        $(".toggle").slideToggle();
+        $(".toggle").slideToggle('fast');
+    });
+
+    $(".toggle").on("mouseleave", function(){
+        $(".toggle").slideUp('fast');
     });
 
     $(document).on("click", "#songButton", function(){
@@ -17,8 +21,11 @@ $(document).ready(function(){
 
             console.log("checked");
             if ( $(this).val()==="yes" ){
+
                 console.log('yes checked');
+
              $("#answer-input").show();
+
             }else{
 
                 console.log("no");
