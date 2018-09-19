@@ -63,6 +63,7 @@ function playerTurn(n) {
         } else {
             game.sequence ++;
             game.score = game.score + 100; //added score 
+            $("#userScore").html(game.score);
             game.yourTurn = true;
 // once the sequence would be greater that the turn this ends the user turn, increments the game turn and starts next round of notes
             if(game.sequence > game.turn) {

@@ -52,12 +52,11 @@ label h4{
     color: rgb(161, 63, 173);
 }
 
-#nameInput, #nickNameInput{
+#nameInput {
     background: none;
     border: 1px solid rgb(161, 63, 173);
+    color: white;
 }
-
-
 
 i.sign.in.icon{
     color: rgb(161, 63, 173);
