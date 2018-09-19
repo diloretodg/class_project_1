@@ -1,12 +1,28 @@
 *{
     color: white;
+   
 }
 h1 {
+    font-size: 26;
     color: #20d071;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+img{
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    
+}
+p {
+    font-size: 20px;
+    font-family: 'Rajdhani', sans-serif;
+
 }
 #button{
     color:#20d071 !important;
     border: #20d071 !important;
+    font-family: 'Rajdhani', sans-serif;
 }
 #button:hover{
     color:#f26fd4 !important;
