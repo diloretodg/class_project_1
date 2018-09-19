@@ -1,13 +1,24 @@
+/* updated font family options:
+font-family: 'Audiowide', cursive;
+font-family: 'Megrim', cursive;
+font-family: 'Gugi', cursive;
+font-family: 'Bungee Shade', cursive;
+font-family: 'Sarpanch', sans-serif;
+font-family: 'Zilla Slab Highlight', cursive; */
+
 *{
     color: white;
 }
-h1, h2, h4, h5, h6, tbody, tr, td, p {
+h1, h2, h4, h5,  tbody,  p {
     color:white;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Audiowide', cursive;
 }
 
-p {
-    font-size: 10px;
+tr, td {
+    font-family: 'Gugi', cursive;
+}
+p , h4, h6{
+    font-size: 20px;
 }
 
 #lbHeader, #topTenHeader, #tablet, #phone {
