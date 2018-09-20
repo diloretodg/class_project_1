@@ -216,3 +216,5 @@ var songBank = [
         songYoutube: "https://www.youtube.com/watch?v=K3pU67zxPOM"
     },
 ];
+
+console.log(songBank[0]);

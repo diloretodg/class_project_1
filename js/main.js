@@ -61,13 +61,16 @@ function newGame() {
 function winLevel(){
     if (game.turn===15){    //if turn equals to 15
         game.turn =false;    //stopping gamers turn
-        //get all notes correct
+        game.score===10,500;//get all notes correct (if perfect score POSSIBLE BOSUS POINT if we had more time)
+        //game.score===13,300     get all the notes correct afte two attempts (at failed attempts on the last 14th iteration times 2 for hypothetical max points)
         //correctly guess song from tune
+        console.log("current game score is " + game.score)          
     } else {
         game.turn ++;       //continue calulating game turn (up intil 15);
-        console.log("current game turn is " + game.turn);
+        console.log("current game turn is " + game.turn);         
     }
 }
+winLevel();
 //===============end of win leve/end game function ===================================
 
 //===============next level button ===================================================
