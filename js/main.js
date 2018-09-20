@@ -17,8 +17,9 @@ var game = {
 
 //   ======= capturing current userdata after submission of EndGameButton for FIREBASE =========
 var currentUser = {
-    username:"",
-    finalScore:""
+    userName:"",
+    finalScore:"",
+    keepScore:false
 }
 
 //============ end of capturing current userdata after submission of EndGameButton for FIREBASE ========
@@ -80,6 +81,8 @@ function winLevel(){
 //===============end of next level button function ====================================
 // ==============game over function ===================================================
     function gameOver(){
+        currentUser.finalScore = game.score;
+        getUserInfo();
         // if (){       //if wrong note hit then this will happen
         //              // for(var = i, i>=game. songarr.length) { };
         // }

@@ -17,8 +17,21 @@ var config = {
     var leaderboard = database.ref("leaderboard");
     var currentUser = database.ref("currentUser");
 
-    
 
 
 
-    
+
+    function getUserInfo() {
+        console.log(currentUser.userName);
+        console.log(currentUser.finalScore);
+
+        console.log(leaderboard.leaders.first.name)
+        console.log(leaderboard.leaders.first.score)
+
+        var finalScore = currentUser.finalScore;
+        var leaderScore = leaderboard.leaders.first.score
+
+        if(finalScore > leaderScore ){
+            console.log("this comparison works")
+        }
+    }
