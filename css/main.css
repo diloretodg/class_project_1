@@ -58,14 +58,7 @@ label h4{
     color: white;
 }
 
-i.sign.in.icon{
-    color: rgb(161, 63, 173);
-    
-}
 
-.toggle{
-    display: none;
-}
 
 nav.ui.inverted.menu{
     position: relative;
@@ -78,6 +71,7 @@ nav.ui.inverted.menu{
     display: none;
 
 }
+
 
 .ui.labeled.icon.button{
     background:none;
@@ -117,10 +111,10 @@ h4.nameTune {
 /*This is the style for our boxs' container. With it we can position and center the boxes in the browser.*/
 
 #instrument {
-height: 100%;
 padding: 20px;
-margin-top: 30px;
+margin-top: 40px;
 margin-bottom: 40px;
+
 
 }
 
@@ -344,6 +338,26 @@ margin-bottom: 40px;
 #c2.light {
     background-color:#db1d2d;
 }
+footer{
+position: relative;
+height: 50px;
+background: linear-gradient(180deg, rgba(24, 15, 156, 0.2) 20%,rgba(0, 0, 0, 0.2) 70%, rgba(78, 39, 83, 0.3) 90%);
+border-top: 1px solid rgba(161, 63, 173, 0.2);
+color: #fff;
+text-align: center;
+font-size: 12px;
+bottom:-40px;
+}
+
+.github.alternate.icon{
+    color: #f26fd4;
+
+
+}
+
+p{
+  padding-top:20px;
+}
 
 @media screen and (max-width: 725px){
     .insResize{
@@ -355,17 +369,21 @@ margin-bottom: 40px;
 
 
 @media screen and (max-width: 500px){
+
+    * {
+        box-sizing: border-box;
+    }
+
     .insResize{
         display: block;
     
     }
 
     .toggle{
-        display:block;
-        width: 100%;
-        padding: 10px 20px;
+        display:flex;
         box-sizing: border-box;
-        font-size: 30px;
+        justify-content: center;
+
     }
 
 
@@ -381,14 +399,15 @@ margin-bottom: 40px;
         margin:0;
         width:100%;
     }
-    ul, li.button.fluid{
-        width: 100%;
+    ul, li, button.ui.button.fluid{
+        width: 395.2px;
         text-decoration: none;
         text-align: center;
+        margin-top: 10px;
+
     }
 
     li{
-        padding: 10px;
         font-size: 16px;
     }
 
@@ -397,6 +416,12 @@ margin-bottom: 40px;
     }
 
     
+
+}
+
+@media screen and (max-width: 400px){
+
+
 
 }
 
