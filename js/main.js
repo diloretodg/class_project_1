@@ -15,11 +15,14 @@ var game = {
     simonSong: null
   };
 
-//   capturing current userdata after submission of of EndGameButton for FIREBASE
+//   ======= capturing current userdata after submission of EndGameButton for FIREBASE =========
 var currentUser = {
     username:"",
     finalScore:""
 }
+
+//============ end of capturing current userdata after submission of EndGameButton for FIREBASE ========
+
 // event listener for game start
 $("#startgame").on("click", function(){
     newGame();
@@ -54,15 +57,36 @@ function newGame() {
     simonSays(game.currentSong);
 }
 
-// win level function
+// ========== win level/end game function ============================how is this different than ln==============
 function winLevel(){
     if (game.turn===15){    //if turn equals to 15
-        game.turn =false    //stopping gamers turn
-        console.log();
+        game.turn =false;    //stopping gamers turn
+        //get all notes correct
+        //correctly guess song from tune
     } else {
         game.turn ++;       //continue calulating game turn (up intil 15);
+        console.log("current game turn is " + game.turn);
     }
 }
+//===============end of win leve/end game function ===================================
+
+//===============next level button ===================================================
+    $("<button>").on("click", function nextLevel(){
+        //clear song data
+        //set orin var game prop val
+        //grab youtube/music data
+        // append to DOM
+    })
+//===============end of next level button function ====================================
+// ==============game over function ===================================================
+    function gameOver(){
+        // if (){       //if wrong note hit then this will happen
+        //              // for(var = i, i>=game. songarr.length) { };
+        // }
+                        //function should include stop game player turn. game.turn === false (or clear);
+                        //set userScore to FB database ref ln132
+    }
+//===============end of game over function=============================================
 
 // allows player turn up to max length
 function playerTurn(n) {
@@ -105,7 +129,13 @@ function simonSays(s) {
     game.simonSong = setTimeout(function(){
 // for loop based on the turn length that sets a timeout for each note one second longerthan its previous note
 
-       //****maybe add if else statement here if game turn exceeds length of song array then this happens****
+//===========***maybe add if else statement here if game turn exceeds length of song array then this happens***=============
+        // if(game.turn > songArr.length){     //if game turn is larger then songArr.length.
+
+        // }else {
+        //     game.turn ++;                   //else game.turn continues to count up.
+        // };
+//===========ending of end game turn length exceeds song array ==============================================================
 
     for (var i = 0; i <= game.turn; i ++) {
             setTimeout(function(index) {
