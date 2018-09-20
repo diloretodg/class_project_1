@@ -57,34 +57,53 @@ function newGame() {
     simonSays(game.currentSong);
 }
 
-// ========== win level/end game function ============================how is this different than ln==============
+// ========== win level function ================ //
+//get all notes correct
+//correctly guess song from tune
 function winLevel(){
     if (game.turn===15){    //if turn equals to 15
         game.turn =false;    //stopping gamers turn
         //get all notes correct
         //correctly guess song from tune
+        // display youtube video
+        // set youtube video src to variable
+        var youtubeSong = game.currentSong.songYoutube;
+    
+        // IDEAS TO: append yoututbe video src
+        // append new youtube video link to script link
+        $('#script').append(youtubeSong);
+    
+        // append new youtube video to line 93 index.html
+        $("#youtubeLink").append(youtubeSong);
+    
+        //Append track info from music API
+
     } else {
         game.turn ++;       //continue calulating game turn (up intil 15);
         console.log("current game turn is " + game.turn);
     }
+    
 }
 //===============end of win leve/end game function ===================================
 
 //===============next level button ===================================================
-    $("<button>").on("click", function nextLevel(){
+    $("#nextLevel").on("click", function nextLevel(){
         //clear song data
         //set orin var game prop val
         //grab youtube/music data
         // append to DOM
+        nextLevel();
     })
 //===============end of next level button function ====================================
 // ==============game over function ===================================================
-    function gameOver(){
-        // if (){       //if wrong note hit then this will happen
-        //              // for(var = i, i>=game. songarr.length) { };
+//if wrong note hit then this will happen
+//if i>=game.songarr.length)        
+function gameOver(){
+        // if (){        { };
         // }
                         //function should include stop game player turn. game.turn === false (or clear);
                         //set userScore to FB database ref ln132
+        game.turn =false;  
     }
 //===============end of game over function=============================================
 
@@ -171,6 +190,47 @@ function play(n) {
     // console.log("playing "+ n + " audio file");
     // console.log(audio);
 }; 
+
+// ======== win level function ========== //
+function winLevel() {
+    if (game.turn < 13)
+    // stop game play/player turn
+    game.yourTurn = false;
+ 
+    // display youtube video
+     // set youtube video src to variable
+     var youtubeSong = game.currentSong.songYoutube;
+ 
+     // IDEAS TO: append yoututbe video src
+     // append new youtube video link to script link
+     $('#script').append(youtubeSong);
+ 
+     // append new youtube video to line 93 index.html
+     $("#youtubeLink").append(youtubeSong);
+ 
+     //Append track info from music API
+ 
+ }
+ // ========== end win level function ============ //
+ 
+ 
+ // -------- next level function ---------- //
+ function nextLevel() {
+    // clear all song data
+    // reset game variables execpt score, establish next song
+    game = {
+        turn: 0,
+        sequence: 0,
+        currentSong: songBank[Math.floor(Math.random() * songBank.length)].songArr,
+        playerChosen: [],
+        correctNote: "",
+        playerChoice: "",
+        yourTurn: false,
+        gameStart: false,
+        simonSong: null
+      };
+ 
+ }
 
 // this is for about us page Card hovor:
 $('.special.cards .image').dimmer({
