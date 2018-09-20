@@ -61,7 +61,7 @@ function newGame() {
 //get all notes correct
 //correctly guess song from tune
 function winLevel(){
-    if (game.turn===15){    //if turn equals to 15
+    if (game.turn===3){    //if turn equals to 15
         game.turn =false;    //stopping gamers turn
         //get all notes correct
         //correctly guess song from tune
