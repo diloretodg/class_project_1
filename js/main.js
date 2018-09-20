@@ -14,6 +14,12 @@ var game = {
     score: 0, 
     simonSong: null
   };
+
+//   capturing current userdata after submission of of EndGameButton for FIREBASE
+var currentUser = {
+    username:"",
+    finalScore:""
+}
 // event listener for game start
 $("#startgame").on("click", function(){
     newGame();
@@ -47,6 +53,17 @@ function newGame() {
       };
     simonSays(game.currentSong);
 }
+
+// win level function
+function winLevel(){
+    if (game.turn===15){    //if turn equals to 15
+        game.turn =false    //stopping gamers turn
+        console.log();
+    } else {
+        game.turn ++;       //continue calulating game turn (up intil 15);
+    }
+}
+
 // allows player turn up to max length
 function playerTurn(n) {
 // only passes this check if its the user's turn may be redundant
@@ -87,7 +104,10 @@ function simonSays(s) {
 // stores timeout to variable to be cleared if needed
     game.simonSong = setTimeout(function(){
 // for loop based on the turn length that sets a timeout for each note one second longerthan its previous note
-        for (var i = 0; i <= game.turn; i ++) {
+
+       //****maybe add if else statement here if game turn exceeds length of song array then this happens****
+
+    for (var i = 0; i <= game.turn; i ++) {
             setTimeout(function(index) {
                 play(s[index].note);
             }.bind(null, i), (i) * 1000)
@@ -96,7 +116,7 @@ function simonSays(s) {
                 setTimeout(function(){
                     game.yourTurn = true;
                 }, (i * 1000 +1000))
-            }
+            }  
         };
     }, 2000);
     

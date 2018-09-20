@@ -22,8 +22,8 @@ $("#add-user").on("click", function(event) {
     event.preventDefault();
      
     // Get username input
-    username = $("#nameInput").val().trim();
-    console.log($("#nameInput").val().trim());
+    var username = $("#nameInput").val().trim();
+    console.log(username);
     // Save changes to Firebase
     // ref set for display on index.html page
     database.ref().set({
@@ -39,49 +39,59 @@ $("#add-user").on("click", function(event) {
         $("#username").text(snapshot.val().username);
         $("#userScore").text(snapshot.val().userScore);
     });
+// ===============for leaderboard display============================================
+database.ref().on('child_added', function (childshapshot){
+   
+
+    });
+
+    $(".previousPlayerName").append("<tr><td><h4 class='ui image header'><img src='https://cdn4.vectorstock.com/i/1000x1000/14/58/pixel-avatar-male-cartoon-retro-game-style-vector-17311458.jpg' class='ui mini rounded image'>" + "<h6>" + childSnapshot.val().username + "</h6>" + "</td></tr>");
+    $(".previousPlayerNickName").append( " <td> " + childSnapshot.val().userScore + "</td>");
+   
 });
 
 
   // ===========start file relating to database here ==============================================================
 //this is the fuction for the form for the name and acct to be imported
-$(document).on("click", ".submit", function(event){
-    event.preventDefault();
-    //creating vars for id's should be placed in index.html
-    //for the form inputs to be captured for firebase
-    var name = $("#nameInput").val().trim();
-    var nickName = $("#nickNameInput").val().trim();
-    var score = $("#userScore").val();
+// $(document).on("click", ".submit", function(event){
+//     event.preventDefault();
+//     console.log("second event listener");
+//     //creating vars for id's should be placed in index.html
+//     //for the form inputs to be captured for firebase
+//     var name = $("#nameInput").val().trim();
+//     var nickName = $("#nickNameInput").val().trim();
+//     var score = $("#userScore").val();
     
-    //user input for firebase imagine breakdown will be:
-        // - user name and nickname will be input on index.html
-        // - score will be calculated possibly with a function on either time lasted or songs correctly completed.
-    var newPlayer ={
-        userName: name,
-        userNickName: nickName,
-        userScore: score         
-    };
-    //pushing into firebase 
-    database.ref().push(newPlayer)
-    console.log(newPlayer);
-});
-//database child_added for the inputed info from the new colaborator
-database.ref().on("child_added", function(childSnapshot){
-    console.log(childSnapshot.val());
-    console.log(childSnapshot.val().userName); 
-    console.log(childSnapshot.val().userNickName);
-    // console.log(childSnapshot.val().userScore);
+//     //user input for firebase imagine breakdown will be:
+//         // - user name and nickname will be input on index.html
+//         // - score will be calculated possibly with a function on either time lasted or songs correctly completed.
+//     // var newPlayer = {
+//     //     userName: name,
+//     //     userScore: score         
+//     // };
+//     //pushing into firebase 
+//     database.ref().push(newPlayer)
+//     console.log(newPlayer.name);
+//     console.log(newPlayer);
+// });
+// //database child_added for the inputed info from the new colaborator
+// database.ref().on("child_added", function(childSnapshot){
+//     console.log(childSnapshot.val());
+//     console.log(childSnapshot.val().userName); 
+//     console.log(childSnapshot.val().userNickName);
+//     // console.log(childSnapshot.val().userScore);
    
-    // publishing data to the table
-    $(".previousPlayerName").append("<tr><td><h4 class='ui image header'><img src='https://cdn4.vectorstock.com/i/1000x1000/14/58/pixel-avatar-male-cartoon-retro-game-style-vector-17311458.jpg' class='ui mini rounded image'>" + "<h6>" + childSnapshot.val().userName + "</h6>" + "</td></tr>");
-    $(".previousPlayerNickName").append( " <td> " + childSnapshot.val().userNickName + "</td>");
-    //this should be in line with the userName data :
-            //$(".decendingScores").append("Score: " + childSnapshot.val().userScore);    
-},
-//added errorObject function just in case something goes wonky
-function(errorObject) {
-    console.log("Errors handled: " + errorObject.code);
+//     // publishing data to the table
+//     $(".previousPlayerName").append("<tr><td><h4 class='ui image header'><img src='https://cdn4.vectorstock.com/i/1000x1000/14/58/pixel-avatar-male-cartoon-retro-game-style-vector-17311458.jpg' class='ui mini rounded image'>" + "<h6>" + childSnapshot.val().userName + "</h6>" + "</td></tr>");
+//     $(".previousPlayerNickName").append( " <td> " + childSnapshot.val().userNickName + "</td>");
+//     //this should be in line with the userName data :
+//             //$(".decendingScores").append("Score: " + childSnapshot.val().userScore);    
+// },
+// //added errorObject function just in case something goes wonky
+// function(errorObject) {
+//     console.log("Errors handled: " + errorObject.code);
 
-});
+// });
 
 //==========NEED HELP HERE==================================================
 
