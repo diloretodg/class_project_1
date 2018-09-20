@@ -3,6 +3,17 @@
     overflow-x: hidden;
 }
 
+#guessYouTube{
+    width: 400px;
+    height: 200px;
+    color: #ffffff;
+    justify-content: center;
+}
+
+#answer-input{
+    margin-top: 100px;
+}
+
 
 
 body {
@@ -387,7 +398,7 @@ p{
     }
 
 
-    
+   
     .align.justify.icon{
         display: block;
         color: #f26fd4;
