@@ -30,13 +30,17 @@ $(document).ready(function(){
         console.log(answer);
          $("#answerSong").val("");
 
-         if(answer){
-             $("#answer-input").hide()
+         if(answer===game.currentSong){
+             $("#answer-input").hide();
+             console.log("great job");
+         }else{
+             console.log("sorry!");
              $("#youTube").slideDown();
          }
 
 
     });
+
 
 });
 

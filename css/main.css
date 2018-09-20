@@ -3,15 +3,25 @@
     overflow-x: hidden;
 }
 
+h1{
+    font-size: 50px;
+}
+
 #guessYouTube{
+    position: relative;
     width: 400px;
     height: 200px;
     color: #ffffff;
     justify-content: center;
+    overflow: hidden;
 }
 
 #answer-input{
     margin-top: 100px;
+}
+
+iframe{
+    display: flex;
 }
 
 
@@ -22,7 +32,7 @@ body {
         background-image: url("../media/images/newBackground.png");
         background-size: cover;
         margin: 0 auto;
-        min-width: 413px;
+        min-width: 465px;
     }
 
 
@@ -360,16 +370,9 @@ font-size: 12px;
 bottom:-40px;
 }
 
-.github.alternate.icon{
-    color: #f26fd4;
 
 
-}
-
-p{
-  padding-top:20px;
-}
-
+  
 @media screen and (max-width: 725px){
     .insResize{
         display: block;
@@ -415,7 +418,7 @@ p{
         text-decoration: none;
         text-align: center;
         margin-top: 10px;
-
+        overflow-y: hidden;
     }
 
     li{
