@@ -43,8 +43,9 @@ function newGame() {
         yourTurn: false,
         gameStart: false,
         score: 0, 
-        simonSong: null
-      };
+        simonSong: null,
+        userName: ""
+    };
     simonSays(game.currentSong);
 }
 // allows player turn up to max length
@@ -59,7 +60,7 @@ function playerTurn(n) {
         if(game.playerChoice != game.correctNote){
             game.yourTurn = false;
             // console.log("wrong");
-            simonSays(game.currentSong);
+            gameOver();
         } else {
             game.sequence ++;
             game.score = game.score + 100; //added score 
@@ -101,14 +102,16 @@ function simonSays(s) {
     }, 2000);
     
 }
+
+function lightOut(currentNote) {
+    currentNote.removeClass("light");
+}
 // plays our notes
 function play(n) {
 // stores specfic box linked to audio
     currentNote = $("a[data-note="+ n +"]").addClass("light");
 // adds a class for a half second linked to the note div attached to the audio
-    window.setTimeout(function() {
-        currentNote.removeClass("light");
-    }, 300);
+    window.setTimeout(lightOut.bind(null, currentNote), 300);
 // pulls id for specific audio
     var audio = document.getElementById(n);
 // on multiple clicks resets time
@@ -167,5 +170,9 @@ $('.special.cards .image').dimmer({
   }
   function stopVideo() {
     player.stopVideo();
+  }
+
+  function gameOver() {
+database.ref("playerArr")
   }
 //   ==================end of YOUTUBE API======================================

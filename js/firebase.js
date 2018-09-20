@@ -49,7 +49,6 @@ $(document).on("click", ".submit", function(event){
     //creating vars for id's should be placed in index.html
     //for the form inputs to be captured for firebase
     var name = $("#nameInput").val().trim();
-    var nickName = $("#nickNameInput").val().trim();
     var score = $("#userScore").val();
     
     //user input for firebase imagine breakdown will be:
@@ -57,13 +56,14 @@ $(document).on("click", ".submit", function(event){
         // - score will be calculated possibly with a function on either time lasted or songs correctly completed.
     var newPlayer ={
         userName: name,
-        userNickName: nickName,
         userScore: score         
     };
     //pushing into firebase 
     database.ref().push(newPlayer)
     console.log(newPlayer);
 });
+
+("")
 //database child_added for the inputed info from the new colaborator
 database.ref().on("child_added", function(childSnapshot){
     console.log(childSnapshot.val());
