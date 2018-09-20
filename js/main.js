@@ -59,27 +59,53 @@ function newGame() {
 
 // ========== win level/end game function ============================how is this different than ln==============
 function winLevel(){
-    if (game.turn===15){    //if turn equals to 15
-        game.turn =false;    //stopping gamers turn
-        game.score===10,500;//get all notes correct (if perfect score POSSIBLE BOSUS POINT if we had more time)
-        //game.score===13,300     get all the notes correct afte two attempts (at failed attempts on the last 14th iteration times 2 for hypothetical max points)
-        //correctly guess song from tune
-        console.log("current game score is " + game.score)          
-    } else {
-        game.turn ++;       //continue calulating game turn (up intil 15);
-        console.log("current game turn is " + game.turn);         
-    }
+    
+    game.yourTurn = false;                          //stop game play/player turn
+var youtubeSong = game.currentSong.songYoutube; //display youtube video set youtube src to var
+$("#script").append(youtubeSong);               //IDEAS TO: append yt vid to scritp link
+$("#youtubeLink").append(youtubeSong);          //append new yt vid to ln 93 index.html
+//append track info from music API
+
+    //Jared's ideas below discount them if they ar not relevent.
+    // if (game.turn===15){    //if turn equals to 15
+    //     game.turn =false;    //stopping gamers turn
+    //     game.score===10,500;//get all notes correct (if perfect score POSSIBLE BOSUS POINT if we had more time)
+    //     //game.score===13,300     get all the notes correct afte two attempts (at failed attempts on the last 14th iteration times 2 for hypothetical max points)
+    //     //correctly guess song from tune
+    //     console.log("current game score is " + game.score)          
+    // } else {
+    //     game.turn ++;       //continue calulating game turn (up intil 15);
+    //     console.log("current game turn is " + game.turn);         
+    // }
 }
 winLevel();
 //===============end of win leve/end game function ===================================
 
-//===============next level button ===================================================
-    $("<button>").on("click", function nextLevel(){
-        //clear song data
-        //set orin var game prop val
-        //grab youtube/music data
-        // append to DOM
-    })
+
+//===============next level function/button ===================================================
+function nextLevel() {
+    // clear all song data
+    // reset game variables execpt score, establish next song
+    game = {
+    turn: 0,
+    sequence: 0,
+    currentSong: songBank[Math.floor(Math.random() * songBank.length)].songArr,
+    playerChosen: [],
+    correctNote: "",
+    playerChoice: "",
+    yourTurn: false,
+    gameStart: false,
+    simonSong: null
+    };
+}
+
+    // Jared's thoughts prior to Jeremy's code considerations use if needed:
+            // $("<button>").on("click", function nextLevel(){
+            //     //clear song data
+            //     var //set orin var game prop val
+            //     //grab youtube/music data
+            //     $("#nextLevel").append();// append to DOM
+            // })
 //===============end of next level button function ====================================
 // ==============game over function ===================================================
     function gameOver(){
