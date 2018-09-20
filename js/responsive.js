@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
     $(".toggle").hide();
-    $(".songGuess").hide();
     $("#answer-input").hide();
+    $("#youTube").hide();
 
    
 
@@ -17,39 +17,26 @@ $(document).ready(function(){
     $(document).on("click", "#songButton", function(){
         event.preventDefault();
 
-        $.each($("input[name = 'songInput']:checked"), function(){
+        if("songButton"){
+            $(".songGuess").fadeOut();
+            $("#answer-input").fadeIn(2000);
+        }
+            
+    });
 
-            console.log("checked");
-            if ( $(this).val()==="yes" ){
+    $(document).on("click", "#answerButton", function(){
+        event.preventDefault();
+        var answer=$("#answerSong").val().trim();
+        console.log(answer);
+         $("#answerSong").val("");
 
-                console.log('yes checked');
+         if(answer){
+             $("#answer-input").hide()
+             $("#youTube").slideDown();
+         }
 
-             $("#answer-input").show();
-
-            }else{
-
-                console.log("no");
-                
-            }
-
-            $(".songGuess").hide();
 
     });
-});
-
-         $(document).on("click", "#answerButton", function(){
-            event.preventDefault();
-            var answer=$("#answerSong").val().trim();
-            console.log(answer);
-             $("#answerSong").val("");
-
-
-        });
-
-    
-
-
-
-
 
 });
+

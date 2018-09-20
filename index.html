@@ -76,7 +76,7 @@
 
                     <form class="ui form">
                         <div class="field">
-                            <label><h4>Full Name</h4></label>
+                            <label><h4>Name</h4></label>
                             <!-- added id for name input -->
                             <input type="text" name="name" id="nameInput" placeholder="ex:Toby Mcquire">
                         </div>
@@ -89,10 +89,24 @@
 
 <!-- ==============middle segment begining ========================================== -->
             <div class="six wide column">
+              
                 <div class=" musicVideo ui segment">
-                    <iframe width="400" height="200"src="https://www.youtube.com/embed/dASqLXiuomY?rel=0&amp;controls=0&amp;showinfo=0&amp;start=1200"frameborder="0"allow="autoplay; encrypted-media"allowfullscreen></iframe>
+                  <div id="guessYouTube">
+                    <iframe id="youTube" width="400" height="200"src="https://www.youtube.com/embed/dASqLXiuomY?rel=0&amp;controls=0&amp;showinfo=0&amp;start=1200"frameborder="0"allow="autoplay; encrypted-media"allowfullscreen></iframe>
+                    <div class="songGuess">
+                        <h1>Name That Tune</h1>
+                        <p>Guess The Song Early and Advance to The Next Round</p>
+                        <form>
+                        <button id="songButton" type="submit">OK</button>
+                       </form>
+                    </div>
+                      <form id="answer-input">
+                          <input id="answerSong" type="text">
+                          <button id="answerButton" type="submit">Submit</button>
+                      </form>
+                  </div>
                 </div>
-                </div>
+              </div>
 <!-- =============ending middle segment ================================================================= -->
 <!-- ===========================display right segment ============================ -->
 <div class="column">
@@ -113,7 +127,7 @@
               <h3>Leader:  <span style="display: inline" id="leader"></span></h3>
 
               <!-- Top Score -->
-              <h2>Top Score:  <span style="display: inline" id="topScore"></span></h2>
+              <h3>Top Score:  <span style="display: inline" id="topScore"></span></h3>
             </div>
           </div>
  </div> 
@@ -130,21 +144,7 @@
 
             <div class="ui row centered">
               <div id="instrument">
-<!-----------------------------pop up form for naming the song bonus----------------------------------->
-  <div class="songGuess">
-    <h1>Bonus</h1>
-    <p>would You Like To Try Guessing The Song For 300 Points?</p>
-   <form><input id="yes" name="songInput" type=radio value="yes">Yes
-    <input id="no" name="songInput" type="radio" value="no">No
-    <button id="songButton" type="submit">Submit</button>
-   </form>
-  </div>
-  <form id="answer-input">
-      <label for="answerSong">Answer</label>
-      <input id="answerSong" type="text">
-      <button id="answerButton" type="submit">Submit</button>
-  </form>
-<!---------------------------------------------------------------------------------------------------------->
+
                 <a id="c" class="box music-note" data-note="c3Audio"></a>
                 <a id="d" class="box music-note" data-note="d3Audio"></a>
                 <a id="e" class="box music-note" data-note="e3Audio"></a>
@@ -160,7 +160,7 @@
 <!-- =====END OF NOTES BUTTONS=============================================== -->
   </div>
     <footer>
-        <p>&copy;2018 COW</p>
+        <p>&copy;2018 C.O.W.</p>
     </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
   <script src="js/song-bank.js"></script>
