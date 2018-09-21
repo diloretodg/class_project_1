@@ -14,6 +14,8 @@
 </head>
 
 <body>
+    <!-- wrapper for smooth fade in -->
+    <div class="wrapper fade-in">
 <nav class="ui inverted black menu">
 <h3 class="header item">Meistro Music Box</h3>
 <!-- will need to add links to the html pages for our nave bar -->
@@ -29,10 +31,10 @@
                     <div class="three wide column"></div>
                     <!-- explanation of this donation page -->
                 <div class="ten wide column">
-                    <h1><img src="data:image/jpeg;base64,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" alt=""> Florance Donations:</h1>
+                    <h1> Hurricane Florence Donations:</h1>
                     <p>We did this project for education and enjoyment the past 2 weeks, but 
                         in areas around NC there are those lacking enjoyment and have had drastic
-                        hinderences in their daily life due to <strong>Hurricane Florance</strong>. 
+                        hinderences in their daily life due to <strong>Hurricane Florence</strong>. 
                         Please consider donating to assist those less fortunate and while you wait 
                         for your help to be withdrawn from your bank account take some time playing 
                         our game!
@@ -58,6 +60,8 @@
         </div>
   </div>
     <br><br>
+<!-- end of wrapper for smooth fade in -->
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
   <script src="js/song-bank.js"></script>
   <script src="js/donation.js"></script>
