@@ -53,7 +53,10 @@ $(document).ready(function(){
              $("#answer-input").hide();
              console.log(game.songTitle);
              console.log("That's right!");
-             alert("fuck yeah! that's right!")
+             alert("fuck yeah! that's right!");
+             // Add bonus points for guessing song
+             game.score = game.score + 500;
+             $("#userScore").html(game.score);
             // get youtube video
             document.getElementById("youtube").src = game.songYoutube;
 
