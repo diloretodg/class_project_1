@@ -1,5 +1,23 @@
 $(document).ready(function(){
 
+    //random number set to i
+    var i = (Math.floor(Math.random() * songBank.length));
+    // relevant game val all initialized
+    // var game = {
+    // turn: 0,
+    // sequence: 0,
+    // currentSong: songBank[i-1].songArr,
+    // songTitle: songBank[i-1].songName,
+    // playerChosen: [],
+    // correctNote: "",
+    // playerChoice: "",
+    // yourTurn: false,
+    // gameStart: false,
+    // score: 0, 
+    // simonSong: null
+    // };
+    
+
     $(".toggle").hide();
     $("#answer-input").hide();
     $("#youTube").hide();
@@ -30,17 +48,27 @@ $(document).ready(function(){
         console.log(answer);
          $("#answerSong").val("");
 
-         if(answer===game.currentSong){
+         // If answer is correct
+         if(answer==game.songTitle){
              $("#answer-input").hide();
-             console.log("great job");
-         }else{
+             console.log(game.songTitle);
+             console.log("That's right!");
+             alert("fuck yeah! that's right!")
+            // get youtube video
+            document.getElementById("youtube").src = game.songYoutube;
+
+         }// If incorrect
+         else{
+             
              console.log("sorry!");
-             $("#youTube").slideDown();
+             $("#answer-input").hide();
+            //  $("#youTube").slideDown();
+            document.getElementById("youTube").src = game.songYoutube;
          }
 
 
     });
 
-    
+
 });
 
