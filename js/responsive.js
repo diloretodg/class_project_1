@@ -20,12 +20,6 @@ $(document).ready(function(){
     $(".toggle").hide();
     $("#answer-input").hide();
     $("#youTube").hide();
-    
-
-
-
-
-
 
     console.log(game.songTitle);
 
@@ -62,7 +56,7 @@ $(document).ready(function(){
              game.score = game.score + 500;
              $("#userScore").html(game.score);
             // get youtube video
-           $("#guessYouTube").html('<h1 class="winningText">Great Job<h1>');
+           $("#guessYouTube").html('<h1 class="winningText">Great Job<h1>');//not youtube//
            $(".winningText").fadeOut(2000);
 
          }// If incorrect
