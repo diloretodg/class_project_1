@@ -266,7 +266,7 @@ function winLevel() {
     
     //Append track info from music API
     
-}
+}}
 // ========== end win level function ============ //
 
 
@@ -346,5 +346,5 @@ $("#add-user").on("click", function(event) {
     $("current-user-score").html('<h3>Score: ' + game.score + '<span style="display: inline" id="userScore"></span></h3>')
 })
 
-;
+
 buildLeaderboard();
