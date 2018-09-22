@@ -7,7 +7,10 @@
 <title>MMB_Donations</title>
 <!-- google fonts -->
 <link href="https://fonts.googleapis.com/css?family=Rajdhani:400,600" rel="stylesheet">
-
+ <!-- for if we had more time to add API for cresting data form Aeris Weather:
+            data-main attribute tells require.js to load
+             scripts/main.js after require.js loads. -->
+             <!-- <script data-main="scripts/main" src="scripts/require.js"></script> -->
 <link href="css/main.css"  rel="stylesheet" type="text/css"/>
 <link href="css/donation.css"  rel="stylesheet" type="text/css"/>
 
@@ -48,13 +51,16 @@
                         <h1>Commit yourself to a pledge of your availabilty: </h1>
 <hr><br>
 <img class="ui rounded image" src="http://jewishpb.org/fed/wp-content/uploads/2017/10/post_florence_reliefelief_1220x838.jpg" alt="hurricane relief">
-<!-- ======= 2nd attempt (WORKING) if form doesnt work have a button for yes (like a select button for the redirect)===== -->
+<!-- ===========================RED CROSS BUTTON link ==================================================== -->
 <br>
 <button class="massive ui green basic button" id="button"> Donate 
     <!-- may add this back later: <i class="plus icon red large"></i> -->
 </button>
-<!-- =============================end of button backup html================================================== -->
+<!-- =============================end of RED CROSS button================================================== -->
 
+<!-- =====================Would be element to check for water crests in aeris weather API============================ -->
+        <!-- <div id="crestingInfo">Cresting Info </div> -->
+<!-- =====================end of button aeris weather API ================================================= -->
                 </div>
             </div>
         </div>
@@ -67,6 +73,7 @@
   <script src="js/donation.js"></script>
   <script src="js/main.js"></script>
  
+
 
 </body>
 </html>
