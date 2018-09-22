@@ -79,7 +79,9 @@ label h4{
     color: white;
 }
 
-
+#nextLevel {
+    visibility: hidden;
+}
 
 nav.ui.inverted.menu{
     position: relative;

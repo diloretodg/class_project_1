@@ -19,6 +19,8 @@
 </head>
 
 <body>
+<!-- wrapper for the smooth fade in -->
+<div class="wrapper fade-in">
   <nav class="ui inverted black menu">
     <h3 class="header item">Meistro Music Box</h3>
     <!-- will need to add links to the html pages for our nave bar -->
@@ -34,43 +36,64 @@
         <i class="circular users icon"></i>        
         </h1>
   </header>
-  <!-- header pieces seemed to work best outside the header (may need to refactor) -->
-  <h1 class="ui center large" id="lbHeader">Leader Board:</h1>
-  <h4 class="ui center small" id="topTenHeader">(Live Top Ten)</h4>
+ 
 
 <div class="ui container">
     <div class="ui grid">
+
+    <div class="row">
+        <div class="five wide column"></div>
+        <h1 class="ui center large" id="lbHeader">Leader Board:</h1>
+    </div>
+
+    <div class="row">
+        <div class="seven wide column"></div>
+        <h4 class="ui center small" id="topTenHeader">(Live Top Ten)</h4>
+    </div>
         <!-- basic table with top ten player info -->
-    <div class="five wide column"></div>
+    <div class="six wide column"></div>
     <div class="six wide column">
         <table class="ui very basic collapsing celled table background_color">
         <thead>
-            <tr><th> <h4>Players</h4></th>
-            <th><h4>High Scrore</h4></th>
-        </tr></thead>
+            <tr><th> <h4></h4></th>
+            <th><h4></h4></th>
+            
+            </tr>
+        </thead>
         <!-- created a leaderboard id limit length of the table see limitingRows()-->
         <tbody class="previousPlayerName previousPlayerNickName"  id="leaderBoard scoreData">
             <tr>
-            <td>
-               
-                </div>
-            </h4></td>
-            <!-- firebase integrated score -->
-            <td class="firebase_score">
-                "score could go here"
-            </td>
+                <!-- add Firebase player data here -->
+                <td>
+                        <h4 class="ui image header">
+                            <div class="content"></div>
+                        </h4>
+                </td>
+                <!-- add Firebase Score data here -->
+                <td></td>
             </tr>
-        </div>
         </tbody>
         </table>
     </div>
+
     <div class="five wide column"></div>
     </div>
 </div>
-
+</div>
+</div>
+</div>
 <!-- testing display content will put into table after -->
 <div class="previousPlayerData"></div>
 
+<!-- had to add this div because the footer was not working without it (oddly it doesnt tie into anything...) -->
+</div> 
+<footer>
+        <p class="ffont">&copy;2018 C.O.W.</p>
+</footer>
+
+
+<!-- end of fade-in wrapper -->
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.js"></script>
 <!-- added firebase js file -->
 <script src="js/firebase.js"></script>
