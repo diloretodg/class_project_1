@@ -16,11 +16,11 @@ h1, h2, h4, h5,  tbody,  p {
 .ffont{
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size:12px;
-
+}
 tr, td {
     font-family: 'Gugi', cursive;
 }
-p , h4, h6{
+p , h4, h6, td {
     font-size: 20px;
 }
 
@@ -28,7 +28,10 @@ p , h4, h6{
     text-align: center;
     align-content: center;
 }
-
+.secondfiller{
+  width: 100%;
+  height: 300px;
+}
 /* wrapper for smooth fade in of the page */
 .fade-in{
     animation: animationFrames ease 1s;
