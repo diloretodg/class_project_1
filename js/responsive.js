@@ -17,12 +17,17 @@ $(document).ready(function(){
     // simonSong: null
     // };
     
-
     $(".toggle").hide();
     $("#answer-input").hide();
     $("#youTube").hide();
+    
 
-   
+
+
+
+
+
+    console.log(game.songTitle);
 
     $("#collapse").on("click", function(){
         $(".toggle").slideToggle('fast');
@@ -35,7 +40,7 @@ $(document).ready(function(){
     $(document).on("click", "#songButton", function(){
         event.preventDefault();
 
-        if("songButton"){
+        if("#songButton"){
             $(".songGuess").fadeOut();
             $("#answer-input").fadeIn(2000);
         }
@@ -49,28 +54,30 @@ $(document).ready(function(){
          $("#answerSong").val("");
 
          // If answer is correct
-         if(answer==game.songTitle){
+         if(answer===game.songTitle){
              $("#answer-input").hide();
              console.log(game.songTitle);
              console.log("That's right!");
-             alert("fuck yeah! that's right!");
              // Add bonus points for guessing song
              game.score = game.score + 500;
              $("#userScore").html(game.score);
             // get youtube video
-            document.getElementById("youtube").src = game.songYoutube;
+           $("#guessYouTube").html('<h1 class="winningText">Great Job<h1>');
+           $(".winningText").fadeOut(2000);
 
          }// If incorrect
          else{
              
              console.log("sorry!");
+             console.log(game.songTitle);
              $("#answer-input").hide();
-            //  $("#youTube").slideDown();
-            document.getElementById("youTube").src = game.songYoutube;
+             $("#youTube").slideDown();
          }
 
 
+
     });
+
 
 
 });
