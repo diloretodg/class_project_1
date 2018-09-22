@@ -13,6 +13,9 @@ h1, h2, h4, h5,  tbody,  p {
     color:white;
     font-family: 'Audiowide', cursive;
 }
+.ffont{
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size:12px;
 
 tr, td {
     font-family: 'Gugi', cursive;
