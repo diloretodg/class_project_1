@@ -8,10 +8,9 @@ h1 {
     font-family: 'Rajdhani', sans-serif;
 }
 
-p {
+.pfont {
     font-size: 20px;
     font-family: 'Rajdhani', sans-serif;
-
 }
 #button{
     color:#20d071 !important;
