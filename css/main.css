@@ -423,6 +423,10 @@ bottom:-40px;
         overflow-y: hidden;
     }
 
+    button.ui.inverted.button.fluid{
+        border: #f26fd4;
+    }
+
     li{
         font-size: 16px;
     }
