@@ -3,16 +3,44 @@
     overflow-x: hidden;
 }
 
+#answerButton:active{
+    color: rgb(83, 56, 87);
+}
+
+
 h1{
-    font-size: 50px;
+    display: absolute;
+    text-align: center;
+    font-size: 75px;
+    color: rgb(161, 63, 173);
+    opacity: 0.3;
+    margin-top: 25px;
+
+}
+
+h1:hover{
+    color: rgb(161, 63, 173);
+    opacity: 0.6;
+    cursor: pointer;
+    
+}
+
+h1:active{
+    color: rgb(83, 56, 87);
+}
+
+.directions{
+    display: absolute;
+    opacity: 0.5;
+    padding-top: 40px;
+
 }
 
 #guessYouTube{
-    position: relative;
     width: 400px;
     height: 200px;
     color: #ffffff;
-    justify-content: center;
+    text-align: center;
     overflow: hidden;
 }
 
@@ -67,10 +95,35 @@ label h4{
     color:rgb(161, 63, 173);
 }
 
+#answerSong{
+
+    border: 1px solid rgb(161, 63, 173);
+    background: none;
+    color: rgb(161, 63, 173);
+
+}
+
+#answerButton{
+    border: 1px solid rgb(161, 63, 173);
+    background: none;
+    color: rgb(161, 63, 173);
+}
+
 .ui.submit.button{
     border: 1px solid rgb(161, 63, 173);
     background: none;
     color: rgb(161, 63, 173);
+}
+
+.ui.submit.button:active{
+        color: rgb(83, 56, 87);
+    }
+
+.winningText{
+    padding-top: 25px;
+    text-align: center;
+    color: rgb(161, 63, 173);
+    opacity: 0.6
 }
 
 #nameInput {
@@ -79,9 +132,7 @@ label h4{
     color: white;
 }
 
-#nextLevel {
-    visibility: hidden;
-}
+
 
 nav.ui.inverted.menu{
     position: relative;
@@ -361,6 +412,11 @@ margin-bottom: 40px;
 #c2.light {
     background-color:#db1d2d;
 }
+
+.filler{
+    height: 35px;
+    width: 100%;
+}
 footer{
 position: relative;
 height: 50px;
@@ -369,7 +425,11 @@ border-top: 1px solid rgba(161, 63, 173, 0.2);
 color: #fff;
 text-align: center;
 font-size: 12px;
-bottom:-40px;
+
+}
+
+footer p{
+    padding-top: 20px;
 }
 
 
@@ -415,12 +475,24 @@ bottom:-40px;
         margin:0;
         width:100%;
     }
-    ul, li, button.ui.button.fluid{
+    ul, li, a, button.ui.fluid.button{
         width: 395.2px;
         text-decoration: none;
         text-align: center;
         margin-top: 10px;
         overflow-y: hidden;
+        color: #a13fad;
+
+    }
+
+    .ui.fluid.button{
+        border: 1px solid #a13fad;
+        background: none;
+    }
+
+    .ui.fluid.button:hover{
+        background: rgba(161, 63, 173, 0.5);
+        
     }
 
     button.ui.inverted.button.fluid{
@@ -435,15 +507,13 @@ bottom:-40px;
         width: 100%;
     }
 
+
+    }
+
     
 
-}
-
-@media screen and (max-width: 400px){
 
 
-
-}
 
 
 

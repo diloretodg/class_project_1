@@ -61,10 +61,10 @@
 
   <div class="toggle"> 
     <ul>
-      <li><button class="ui inverted button fluid"><a href= "index.html" class="item">Home</a></button></li>
-      <li><button class="ui inverted button fluid"><a href="leaders.html" class="item">Leaders</a></button></li>
-      <li><button class="ui inverted button fluid"><a href= "about_us.html" class="item">About</a></button></li>
-      <li><button class="ui inverted button fluid"><a href= "donation.html" class="item">Donate</a></button></li>
+      <li><button class="ui button fluid"><a href= "index.html" class="item">Home</a></button></li>
+      <li><button class="ui button fluid"><a href="leaders.html" class="item">Leaders</a></button></li>
+      <li><button class="ui button fluid"><a href= "about_us.html" class="item">About</a></button></li>
+      <li><button class="ui button fluid"><a href= "donation.html" class="item">Donate</a></button></li>
     </ul>
   </div>
     
@@ -94,15 +94,12 @@
                   <div id="guessYouTube">
                     <iframe id="youTube" width="400" height="200"src="https://www.youtube.com/embed/dASqLXiuomY?rel=0&amp;controls=0&amp;showinfo=0&amp;start=1200"frameborder="0"allow="autoplay; encrypted-media"allowfullscreen></iframe>
                     <div class="songGuess">
-                        <p>Guess The Song Early and Advance to The Next Round</p>
-                        <h1>?</h1>  
-                        <form>
-                        <button id="songButton" type="submit">Guess Here</button>
-                       </form>
+                        <p class="directions">Guess The Song Early and Advance to The Next Round</p>
+                        <h1 id="songButton">?</h1>  
                     </div>
-                      <form id="answer-input">
+                      <form class="ui action input" id="answer-input">
                           <input id="answerSong" type="text">
-                          <button id="answerButton">Submit</button>
+                          <button class="ui button" id="answerButton">Submit</button>
                       </form>
                   </div>
                 </div>
@@ -140,17 +137,12 @@
                     <i class="play circle icon"></i>
                     Start Game
                   </button>
-             </div> 
-            <!-- START GAME BUTTON -->
-
-            <!-- NEXT LEVEL BUTTON-->
-             <div class="ui row centered"> 
-                <button class="ui compact labeled icon button" id="nextLevel">
+                  <button class="ui compact labeled icon button" id="nextLevel">
                     <i class="play circle icon"></i>
                     Next Level
                   </button>
              </div> 
-             <!-- NEXT LEVEL BUTTON-->
+            <!-- START GAME BUTTON -->
 
             <div class="ui row centered">
               <div id="instrument">
@@ -169,6 +161,7 @@
   </div>
 <!-- =====END OF NOTES BUTTONS=============================================== -->
   </div>
+  <div class="filler"></div>
     <footer>
         <p>&copy;2018 C.O.W.</p>
     </footer>
