@@ -20,12 +20,6 @@ $(document).ready(function(){
     $(".toggle").hide();
     $("#answer-input").hide();
     $("#youTube").hide();
-    
-
-
-
-
-
 
     console.log(game.songTitle);
 

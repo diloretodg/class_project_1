@@ -8,7 +8,7 @@
 }
 
 
-h1{
+#songButton{
     display: absolute;
     text-align: center;
     font-size: 75px;
@@ -18,7 +18,7 @@ h1{
 
 }
 
-h1:hover{
+#songButton:hover{
     color: rgb(161, 63, 173);
     opacity: 0.6;
     cursor: pointer;
