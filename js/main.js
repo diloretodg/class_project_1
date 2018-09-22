@@ -1,11 +1,13 @@
 var noteIntervals = [];
 // test song function
 var currentNote;
+var i = (Math.floor(Math.random() * songBank.length));
 // relevant game val all initialized
 var game = {
     turn: 0,
     sequence: 0,
-    currentSong: songBank[Math.floor(Math.random() * songBank.length)].songArr,
+    currentSong: songBank[i].songArr,
+    songTitle: songBank[i].songName,
     playerChosen: [],
     correctNote: "",
     playerChoice: "",
@@ -45,7 +47,8 @@ function newGame() {
     game = {
         turn: 0,
         sequence: 0,
-        currentSong: songBank[Math.floor(Math.random() * songBank.length)].songArr,
+        currentSong: songBank[i].songArr,
+        songTitle: songBank[i].songName,
         playerChosen: [],
         correctNote: "",
         playerChoice: "",
@@ -193,20 +196,22 @@ function play(n) {
 
 // ======== win level function ========== //
 function winLevel() {
-    if (game.turn < 13)
+    if (game.turn > 2 || answer==game.songTitle) {
     // stop game play/player turn
     game.yourTurn = false;
+    alert("Congratulations! You won! Try guessing the name of that tune for extra points.");
+    } 
  
-    // display youtube video
-     // set youtube video src to variable
-     var youtubeSong = game.currentSong.songYoutube;
+    // // display youtube video
+    //  // set youtube video src to variable
+    //  var youtubeSong = game.currentSong.songYoutube;
  
-     // IDEAS TO: append yoututbe video src
-     // append new youtube video link to script link
-     $('#script').append(youtubeSong);
+    //  // IDEAS TO: append yoututbe video src
+    //  // append new youtube video link to script link
+    //  $('#script').append(youtubeSong);
  
-     // append new youtube video to line 93 index.html
-     $("#youtubeLink").append(youtubeSong);
+    //  // append new youtube video to line 93 index.html
+    //  $("#youtubeLink").append(youtubeSong);
  
      //Append track info from music API
  
@@ -221,8 +226,8 @@ function winLevel() {
     game = {
         turn: 0,
         sequence: 0,
-        currentSong: songBank[Math.floor(Math.random() * songBank.length)].songArr,
-        playerChosen: [],
+        currentSong: songBank[i].songArr,
+        songTitle: songBank[i].songName,
         correctNote: "",
         playerChoice: "",
         yourTurn: false,
