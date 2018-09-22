@@ -53,9 +53,7 @@ justify-content: center;
     justify-content: center;
     border: 1px solid rgba(161, 63, 173, 0.5);
     height: 100%;
-    background: linear-gradient(-80deg, rgba(6, 11, 46, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(6, 11, 46, 0.3) 90%);
- 
-    
+    background: linear-gradient(-80deg, rgba(6, 11, 46, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(6, 11, 46, 0.3) 90%);   
 }
 
 .ui.compact.segment{
@@ -74,6 +72,12 @@ label h4{
 }
 
 #nameInput {
+    background: none;
+    border: 1px solid rgb(161, 63, 173);
+    color: white;
+}
+
+#answerSong{
     background: none;
     border: 1px solid rgb(161, 63, 173);
     color: white;
@@ -118,6 +122,10 @@ nav.ui.inverted.menu{
     background: linear-gradient(-80deg, rgba(6, 11, 46, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(6, 11, 46, 0.3) 90%);
     color: rgb(161, 63, 173);
     padding: auto 5px auto 5px;
+ }
+
+ .pStyle{
+    color: #20d071;
  }
 
 
