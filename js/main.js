@@ -53,11 +53,13 @@ var config = {
 var noteIntervals = [];
 // test song function
 var currentNote;
+var i = (Math.floor(Math.random() * songBank.length));
 // relevant game val all initialized
 var game = {
     turn: 0,
     sequence: 0,
-    currentSong: songBank[Math.floor(Math.random() * songBank.length)].songArr,
+    currentSong: songBank[i].songArr,
+    songTitle: songBank[i].songName,
     playerChosen: [],
     correctNote: "",
     playerChoice: "",
@@ -97,7 +99,8 @@ function newGame() {
     game = {
         turn: 0,
         sequence: 0,
-        currentSong: songBank[Math.floor(Math.random() * songBank.length)].songArr,
+        currentSong: songBank[i].songArr,
+        songTitle: songBank[i].songName,
         playerChosen: [],
         correctNote: "",
         playerChoice: "",
@@ -245,9 +248,10 @@ function play(n) {
 
 // ======== win level function ========== //
 function winLevel() {
-    if (game.turn < 13)
+    if (game.turn > 2 || answer==game.songTitle) {
     // stop game play/player turn
     game.yourTurn = false;
+
     
     // display youtube video
     // set youtube video src to variable
@@ -268,13 +272,14 @@ function winLevel() {
 
 // -------- next level function ---------- //
 function nextLevel() {
+
     // clear all song data
     // reset game variables execpt score, establish next song
     game = {
         turn: 0,
         sequence: 0,
-        currentSong: songBank[Math.floor(Math.random() * songBank.length)].songArr,
-        playerChosen: [],
+        currentSong: songBank[i].songArr,
+        songTitle: songBank[i].songName,
         correctNote: "",
         playerChoice: "",
         yourTurn: false,

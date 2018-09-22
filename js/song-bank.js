@@ -69,27 +69,6 @@ var songBank = [
     //     songYoutube: "https://www.youtube.com/watch?v=AbXiKLA58SE"
     // },
     // {
-    //     songName:"Lollipop",
-    //     songQuery:"test.song.no-data",
-    //     songArr:[
-    //         {note: "d3Audio", sequence: 1},
-    //         {note: "d3Audio", sequence: 2},
-    //         {note: "d3Audio", sequence: 3},
-    //         {note: "d3Audio", sequence: 4},
-    //         {note: "e3Audio", sequence: 5},
-    //         {note: "e3Audio", sequence: 6},
-    //         {note: "e3Audio", sequence: 7},
-    //         {note: "e3Audio", sequence: 8},
-    //         {note: "f3Audio", sequence: 9},
-    //         {note: "f3Audio", sequence: 10},
-    //         {note: "f3Audio", sequence: 11},
-    //         {note: "f3Audio", sequence: 12},
-    //         {note: "g3Audio", sequence: 13},
-    //         {note: "g3Audio", sequence: 14},
-    //     ],
-    //     songYoutube: "https://youtu.be/2IH8tNQAzSs"
-    // },
-    // {
     //     songName:"Jingle Bells",
     //     songQuery:"test.song.no-data",
     //     songArr:[
