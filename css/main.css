@@ -431,7 +431,10 @@ font-size: 12px;
 footer p{
     padding-top: 20px;
 }
-
+.leader-display{
+    color: whitesmoke;
+    display: inline;
+}
 
 
   

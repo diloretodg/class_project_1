@@ -1,7 +1,7 @@
 // ===============initial firebase==============================================================================
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyChswfB5HAG1cQcjkai_26cvtFHtYqpNYU",
+    apiKey: ,
     authDomain: "project1-a46e9.firebaseapp.com",
     databaseURL: "https://project1-a46e9.firebaseio.com",
     projectId: "project1-a46e9",
@@ -42,6 +42,10 @@ var config = {
             leaderRow.append(playerName);
             leaderRow.append(PlayerScore);
             $("tbody").append(leaderRow);
+            if(num == 1) {
+                $("#top-score-display").text( u[0]).addClass("leader-display");
+                $("#leader-name-display").text( u[1]).addClass("leader-display");
+            }
             // el.innerHTML = `<span class="num">#${num}</span>${u[1]}<span class="score">${u[0]}</span>`;
         });
     });
@@ -66,8 +70,10 @@ var game = {
     yourTurn: false,
     gameStart: false,
     score: 0, 
-    simonSong: null
+    simonSong: null,
+    youtubeSong: songBank[i].songYoutube
 };
+console.log(game.songTitle);
 
 //   ======= capturing current userdata after submission of EndGameButton for FIREBASE =========
 var currentUser = {
@@ -142,11 +148,7 @@ function winLevel(){
 //===============end of win leve/end game function ===================================
 
 //===============next level button ===================================================
-$("#nextLevel").on("click", function nextLevel(){
-    //clear song data
-    //set orin var game prop val
-    //grab youtube/music data
-    // append to DOM
+$(document).on("click", "#next-level", function(){
     nextLevel();
 })
 //===============end of next level button function ====================================
@@ -214,12 +216,12 @@ function simonSays(s) {
 for (var i = 0; i <= game.turn; i ++) {
     setTimeout(function(index) {
         play(s[index].note);
-    }.bind(null, i), (i) * 1000)
+    }.bind(null, i), (i) * 750)
     if(i == game.turn){
         // once we are at the last note in loop sets a timeout that passes the turn back to the user for one second longer han the entire sequence
         setTimeout(function(){
             game.yourTurn = true;
-        }, (i * 1000 +1000))
+        }, (i * 750 +750))
     }  
 };
     }, 2000);
@@ -272,21 +274,22 @@ function winLevel() {
 
 // -------- next level function ---------- //
 function nextLevel() {
-
-    // clear all song data
-    // reset game variables execpt score, establish next song
+    i = (Math.floor(Math.random() * songBank.length));
+    clearTimeout(game.simonSong);
     game = {
         turn: 0,
         sequence: 0,
         currentSong: songBank[i].songArr,
         songTitle: songBank[i].songName,
+        playerChosen: [],
         correctNote: "",
         playerChoice: "",
         yourTurn: false,
         gameStart: false,
+        score: 0, 
         simonSong: null
     };
-    
+    simonSays(game.currentSong);
 }
 
 // this is for about us page Card hovor:
@@ -346,5 +349,4 @@ $("#add-user").on("click", function(event) {
     $("current-user-score").html('<h3>Score: ' + game.score + '<span style="display: inline" id="userScore"></span></h3>')
 })
 
-
-buildLeaderboard();
+buildLeaderboard()

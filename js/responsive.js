@@ -1,7 +1,8 @@
 $(document).ready(function(){
+    buildLeaderboard();
 
     //random number set to i
-    var i = (Math.floor(Math.random() * songBank.length));
+    // var i = (Math.floor(Math.random() * songBank.length));
     // relevant game val all initialized
     // var game = {
     // turn: 0,
@@ -21,7 +22,7 @@ $(document).ready(function(){
     $("#answer-input").hide();
     $("#youTube").hide();
 
-    console.log(game.songTitle);
+    // console.log(game.songTitle);
 
     $("#collapse").on("click", function(){
         $(".toggle").slideToggle('fast');
@@ -52,9 +53,11 @@ $(document).ready(function(){
              $("#answer-input").hide();
              console.log(game.songTitle);
              console.log("That's right!");
+         
              // Add bonus points for guessing song
              game.score = game.score + 500;
              $("#userScore").html(game.score);
+
             // get youtube video
            $("#guessYouTube").html('<h1 class="winningText">Great Job<h1>');//not youtube//
            $(".winningText").fadeOut(2000);
@@ -62,7 +65,7 @@ $(document).ready(function(){
          }// If incorrect
          else{
              
-             console.log("sorry!");
+             console.log("sorry! try again.");
              console.log(game.songTitle);
              $("#answer-input").hide();
              $("#youTube").slideDown();
